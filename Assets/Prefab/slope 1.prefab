@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2735708374385532397}
-  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 10, y: 1, z: 14.181601}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2735708374385532368
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -113,4 +113,4 @@ MonoBehaviour:
   block: {fileID: 2735708374385532397}
   stopOn: 500
   currentBlock: 0
-  rock: {fileID: 7501164642879770473, guid: 0b635289e8cb9be45a97379a4b781497, type: 3}
+  index: 0
