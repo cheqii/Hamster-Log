@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class BlockGenerate1 : MonoBehaviour
@@ -9,7 +6,7 @@ public class BlockGenerate1 : MonoBehaviour
     [SerializeField] private int stopOn;
     [SerializeField] private int currentBlock;
     [SerializeField] private GameObject rock;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +16,9 @@ public class BlockGenerate1 : MonoBehaviour
                 transform.position.z - 13.33f);
             GameObject NewBlock = Instantiate(block, pos, transform.rotation);
             SetBlock(NewBlock);
-
-
+            
             Instantiate(rock, pos + (Vector3.up),rock.transform.rotation);
+            
         }
     }
 
@@ -38,4 +35,6 @@ public class BlockGenerate1 : MonoBehaviour
         NewBlock.GetComponent<BlockGenerate1>().currentBlock = currentBlock + 1;
         
     }
+    
+    
 }
