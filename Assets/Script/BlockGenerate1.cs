@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class BlockGenerate1 : MonoBehaviour
@@ -52,4 +49,6 @@ public class BlockGenerate1 : MonoBehaviour
         NewBlock.GetComponent<BlockGenerate1>().index = index;
 
     }
+    
+    
 }

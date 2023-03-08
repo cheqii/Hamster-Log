@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LogControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    
     [SerializeField] private int turnSpeed = 20;
     [SerializeField] private int startPush = 10;
     [SerializeField] private int jumpPower = 5;

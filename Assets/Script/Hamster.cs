@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hamster : MonoBehaviour
@@ -26,6 +23,7 @@ public class Hamster : MonoBehaviour
     {
         if (other.transform.tag == "ground")
         {
+            Debug.Log("Hamster is dead");
             Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
             Destroy(hamster);
             Destroy(_logControl);
