@@ -5693,7 +5693,7 @@ PrefabInstance:
     - target: {fileID: -2160424804770530820, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
       propertyPath: rock
       value: 
-      objectReference: {fileID: 6495570680920953046, guid: 9f40382d8d37362428477575fd4dcb96, type: 3}
+      objectReference: {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
     - target: {fileID: 2735708374385532369, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
       propertyPath: m_RootOrder
       value: 5
