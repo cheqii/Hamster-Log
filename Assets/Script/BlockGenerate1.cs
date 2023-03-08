@@ -15,11 +15,14 @@ public class BlockGenerate1 : MonoBehaviour
         {
             index = 0;
         }
-        GameObject objectToSpawn = GameData.Instance.GetObstacle(index);
+
+        GameObject objectToSpawn = new GameObject();
+         objectToSpawn = GameData.Instance.GetObstacle(index);
+        
         index++;
         
-        objectToSpawn.transform.eulerAngles = new Vector3(
-            -20f,
+        Vector3 spawnRotation = new Vector3(
+            objectToSpawn.transform.eulerAngles.x - 20f,
             objectToSpawn.transform.eulerAngles.y,
             objectToSpawn.transform.eulerAngles.z);
         
@@ -29,9 +32,7 @@ public class BlockGenerate1 : MonoBehaviour
                 transform.position.z - 13.33f);
             GameObject NewBlock = Instantiate(block, pos, transform.rotation);
             SetBlock(NewBlock);
-
-
-            Instantiate(objectToSpawn, pos + (objectToSpawn.transform.up),objectToSpawn.transform.rotation);
+            Instantiate(objectToSpawn, pos + (objectToSpawn.transform.up),Quaternion.Euler(spawnRotation));
         }
     }
 
