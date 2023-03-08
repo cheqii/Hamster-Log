@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class ObjectFollow : MonoBehaviour
 
 {
     public Transform target;
@@ -13,9 +13,5 @@ public class CameraFollow : MonoBehaviour
         Vector3 desiredPosition = target.position + target.rotation * locationOffset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         transform.position = smoothedPosition;
-
-        //Quaternion desiredrotation = target.rotation * Quaternion.Euler(rotationOffset);
-        //Quaternion smoothedrotation = Quaternion.Lerp(transform.rotation, desiredrotation, smoothSpeed);
-        //transform.rotation = smoothedrotation;
     }
 }
