@@ -13,12 +13,6 @@ public class LogControl : MonoBehaviour
     [SerializeField] private float brakeFriction;
 
     private Rigidbody rb;
-
-    public Rigidbody RB
-    {
-        get => rb;
-        set => rb = value;
-    }
     private GroundCheck _groundCheck;
     
 

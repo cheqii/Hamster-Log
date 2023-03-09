@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPadForce: 5
-  jumpEffect: 0
+  jumpEffect: 1
   spinTorque: 0.5
   spinEffect: 0
   speedBoots: 2.5
-  speedEffect: 1
+  speedEffect: 0
+  destroy: 1
 --- !u!65 &7379483399093390814
 BoxCollider:
   m_ObjectHideFlags: 0

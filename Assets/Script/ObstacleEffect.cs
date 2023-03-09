@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ObstacleEffect : MonoBehaviour
@@ -14,7 +15,7 @@ public class ObstacleEffect : MonoBehaviour
     [Header("Speed Effect")] 
     [SerializeField] private float speedBoots = 8;
     [SerializeField] private bool speedEffect;
-
+    
     public void JumpBoots(GameObject player, int force)
     {
         if (jumpEffect)
@@ -22,7 +23,6 @@ public class ObstacleEffect : MonoBehaviour
             Debug.Log("Jump Boots");
             player.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
         }
-        // logControl.RB.AddForce(Vector3.up * 20, ForceMode.Impulse);
     }
 
     public void Spinning(GameObject player, float torque)
@@ -47,11 +47,17 @@ public class ObstacleEffect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (this.gameObject.CompareTag("JumpPad"))
-            {
-                JumpBoots(collision.gameObject, jumpPadForce);
-                SpeedBoots(collision.gameObject, speedBoots);
-            }
+            JumpBoots(collision.gameObject, jumpPadForce);
+            SpeedBoots(collision.gameObject, speedBoots);
+            Spinning(collision.gameObject, spinTorque);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SpeedBoots(other.gameObject, speedBoots);
         }
     }
 }
