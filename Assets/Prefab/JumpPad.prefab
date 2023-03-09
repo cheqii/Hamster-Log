@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3108103487154515745}
   - component: {fileID: 693108728530973106}
   - component: {fileID: 6397936422652998424}
-  - component: {fileID: 3310955540903859880}
+  - component: {fileID: -3396658923238868414}
+  - component: {fileID: 7379483399093390814}
   m_Layer: 0
   m_Name: JumpPad
-  m_TagString: Untagged
+  m_TagString: JumpPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +85,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3310955540903859880
+--- !u!114 &-3396658923238868414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495570680920953046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2245f49402ea624ab6a3b92866fef96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPadForce: 5
+  jumpEffect: 0
+  spinTorque: 0.5
+  spinEffect: 0
+  speedBoots: 2.5
+  speedEffect: 1
+--- !u!65 &7379483399093390814
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,5 +114,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}

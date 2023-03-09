@@ -2,17 +2,25 @@ using UnityEngine;
 
 public class LogControl : MonoBehaviour
 {
+    [Header("Log Control")]
     [SerializeField] private int turnSpeed = 20;
     [SerializeField] private int startPush = 10;
     [SerializeField] private int jumpPower = 5;
     
+    [Header("Log Physics")]
     [SerializeField] private PhysicMaterial logMaterial;
     [SerializeField] private float normalFriction = 0.12f;
     [SerializeField] private float brakeFriction;
-        
-    private Rigidbody rb;
-    private GroundCheck _groundCheck;
 
+    private Rigidbody rb;
+
+    public Rigidbody RB
+    {
+        get => rb;
+        set => rb = value;
+    }
+    private GroundCheck _groundCheck;
+    
 
 
     void Start()
@@ -90,7 +98,7 @@ public class LogControl : MonoBehaviour
 
     }
 
-    void Jump(int power)
+    public void Jump(int power)
     {
         rb.AddForce(Vector3.up * power, ForceMode.Impulse);
     }
