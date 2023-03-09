@@ -7,8 +7,6 @@ public class Hamster : MonoBehaviour
     [SerializeField] private GameObject hamster;
     [SerializeField] private GameObject blood;
     [SerializeField] private LogControl _logControl;
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,25 +19,20 @@ public class Hamster : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void HamsterDie()
     {
-        if (other.transform.tag == "ground")
-        {
-            Debug.Log("Hamster is dead");
-            Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
-            Destroy(hamster);
-            Destroy(_logControl);
-            Destroy(this.gameObject);
-        }
+        Debug.Log("Hamster is dead");
+        Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
+        Destroy(hamster);
+        Destroy(_logControl);
+        Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Destroy(hamster);
-            Destroy(_logControl);
-            Destroy(this.gameObject);
-        }
+        if (other.transform.CompareTag("ground")) HamsterDie();
+        
+        if(other.gameObject.CompareTag("Obstacle")) HamsterDie();
     }
+    
 }

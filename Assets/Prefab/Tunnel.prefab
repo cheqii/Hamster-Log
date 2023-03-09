@@ -203,9 +203,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5002379628043837130}
+  - component: {fileID: 3014203401222008037}
+  - component: {fileID: 3611052226284044947}
   m_Layer: 0
-  m_Name: umong
-  m_TagString: Obstacle
+  m_Name: Tunnel
+  m_TagString: Tunnel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,6 +230,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3014203401222008037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501164642879770473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4890172, y: 2.483457, z: 1}
+  m_Center: {x: 1.3720509, y: -0.061033487, z: 0}
+--- !u!114 &3611052226284044947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501164642879770473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2245f49402ea624ab6a3b92866fef96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPadForce: 10
+  jumpEffect: 0
+  spinTorque: 0.5
+  spinEffect: 0
+  speedBoots: 8
+  speedEffect: 1
 --- !u!1 &8691719271366864105
 GameObject:
   m_ObjectHideFlags: 0
