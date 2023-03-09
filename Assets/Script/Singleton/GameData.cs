@@ -26,6 +26,19 @@ public class GameData : MonoBehaviour
         return _obstacle.Objects[index];
     }
     
+    public int[] GetObstacleChance()
+    {
+        return _obstacle.ObstacleChance;
+    }
+    public int GetObstacleSpawnChance()
+    {
+        return _obstacle.SpawnChance;
+    }
+    public int GetObstacleMaxSpawn()
+    {
+        return _obstacle.MaxSpawn;
+    }
+    
     public int GetObstacleDataLength()
     {
         return _obstacle.Objects.Length;
