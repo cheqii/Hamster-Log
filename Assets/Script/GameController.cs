@@ -93,9 +93,12 @@ public class GameController : MonoBehaviour
     public void UnPause()
     {
         Time.timeScale = 1;
-        scoreUI.SetActive(true);
-        pausedPanel.SetActive(false);
         isPaused = false;
+        if (!isPaused)
+        {
+            scoreUI.SetActive(true);
+            pausedPanel.SetActive(false);
+        }
     }
     public void Restart()
     {

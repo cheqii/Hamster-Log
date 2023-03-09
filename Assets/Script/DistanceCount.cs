@@ -38,7 +38,7 @@ public class DistanceCount : MonoBehaviour
     void Start()
     {
         highScore = PlayerPrefs.GetFloat("highscore", 0);
-        highScoreText.text = "HighScore : " + highScore.ToString("F0");
+        highScoreText.text = "HighScore : " + highScore.ToString("F0") + " M";
     }
 
     // Update is called once per frame
@@ -62,8 +62,15 @@ public class DistanceCount : MonoBehaviour
     {
         //find distance
         distance = Mathf.Sqrt(Mathf.Pow(currentPoint.x - startPoint.x, 2) + Mathf.Pow(currentPoint.y - startPoint.y, 2));
-        maxDistance = distance;
-        if (distance >= maxDistance) text.text = distance.ToString("F0") + " M";
+        if (distance >= maxDistance)
+        {
+            maxDistance = distance;
+            text.text = distance.ToString("F0") + " M";
+        }
+        else if (distance < maxDistance)
+        {
+            text.text = maxDistance.ToString("F0") + " M";
+        }
         
 
         if (highScore < maxDistance)
