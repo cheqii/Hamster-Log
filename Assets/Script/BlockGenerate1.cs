@@ -5,7 +5,9 @@ public class BlockGenerate1 : MonoBehaviour
     [SerializeField] private GameObject block;
     [SerializeField] private int stopOn;
     [SerializeField] private int currentBlock;
+    [SerializeField] private bool isSpawnObstacle = true;
     private GameObject objectToSpawn;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -19,36 +21,41 @@ public class BlockGenerate1 : MonoBehaviour
             SetBlock(NewBlock);
 
 
-            Vector3 objectSpawnPoint = new Vector3(NewBlock.transform.position.x +
-                                                   Random.Range(-transform.localScale.x / 2,
-                                                       transform.localScale.x / 2),
-                NewBlock.transform.position.y + 10,
-                NewBlock.transform.position.z +
-                Random.Range(-transform.localScale.z / 2, transform.localScale.z / 2));
-           
-            
-            
-            
-            for (int i = 0; i < GameData.Instance.GetObstacleMaxSpawn(); i++)
-            {
-                objectToSpawn = GameData.Instance.GetObstacle(
-                    RandomChance.Instance.GetRandomChance(GameData.Instance.GetObstacleChance()));
+            int loop;
+            loop = Random.Range(0, GameData.Instance.GetObstacleMaxSpawn());
 
-                Vector3 spawnRotation = new Vector3(
-                    objectToSpawn.transform.eulerAngles.x - 20f,
-                    objectToSpawn.transform.eulerAngles.y,
-                    objectToSpawn.transform.eulerAngles.z);
-                //chance of spawn
-                if (GameData.Instance.GetObstacleSpawnChance() > (Random.Range(0, 100)))
+            if (isSpawnObstacle)
+            {
+                for (int i = 0; i < loop; i++)
                 {
-                    GameObject Obstacle = Instantiate(objectToSpawn, objectSpawnPoint, Quaternion.Euler(spawnRotation));
-                    Obstacle.AddComponent<RaycastPositionSet>();
+                    Vector3 objectSpawnPoint = new Vector3(NewBlock.transform.position.x +
+                                                           Random.Range(-transform.localScale.x / 2,
+                                                               transform.localScale.x / 2),
+                        NewBlock.transform.position.y + 10,
+                        NewBlock.transform.position.z +
+                        Random.Range(-transform.localScale.z / 2, transform.localScale.z / 2));
+                
+                
+                    objectToSpawn = GameData.Instance.GetObstacle(
+                        RandomChance.Instance.GetRandomChance(GameData.Instance.GetObstacleChance()));
+
+                    Vector3 spawnRotation = new Vector3(
+                        objectToSpawn.transform.eulerAngles.x - 20f,
+                        objectToSpawn.transform.eulerAngles.y,
+                        objectToSpawn.transform.eulerAngles.z);
+                    //chance of spawn
+                    if (GameData.Instance.GetObstacleSpawnChance() > (Random.Range(0, 100)))
+                    {
+                        GameObject Obstacle = Instantiate(objectToSpawn, objectSpawnPoint, Quaternion.Euler(spawnRotation));
+                        Obstacle.AddComponent<RaycastPositionSet>();
 
 
               
                 
+                    }
                 }
             }
+            
         }
         
         
