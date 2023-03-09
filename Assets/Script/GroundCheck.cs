@@ -11,13 +11,17 @@ public class GroundCheck : MonoBehaviour
         hamster = this.transform.Find("Hamster").GetComponent<Hamster>();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("InvisibleGround")) hamster.HamsterDie();
+    }
+
     private void OnCollisionStay(Collision col)
     {
         if (col.gameObject.CompareTag("ground"))
         {
             isGround = true;
         }
-       if (col.gameObject.CompareTag("InvisibleGround")) hamster.HamsterDie();
     }
 
     private void OnCollisionExit(Collision col)

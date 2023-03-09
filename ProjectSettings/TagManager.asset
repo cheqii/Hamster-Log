@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - JumpPad
   - Tunnel
+  - InvisibleGround
   layers:
   - Default
   - TransparentFX
