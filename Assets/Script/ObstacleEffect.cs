@@ -15,7 +15,9 @@ public class ObstacleEffect : MonoBehaviour
     [Header("Speed Effect")] 
     [SerializeField] private float speedBoots = 8;
     [SerializeField] private bool speedEffect;
-    
+
+    #region -Obstacle Effects-
+
     public void JumpBoots(GameObject player, int force)
     {
         if (jumpEffect)
@@ -42,6 +44,8 @@ public class ObstacleEffect : MonoBehaviour
             player.GetComponent<Rigidbody>().AddForce(Vector3.right * speed, ForceMode.Impulse);
         }
     }
+
+    #endregion
 
     private void OnCollisionEnter(Collision collision)
     {

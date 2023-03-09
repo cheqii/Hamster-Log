@@ -31,6 +31,8 @@ public class Hamster : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("ground")) HamsterDie();
+        
+        if(other.gameObject.CompareTag("Obstacle")) HamsterDie();
     }
     
 }
