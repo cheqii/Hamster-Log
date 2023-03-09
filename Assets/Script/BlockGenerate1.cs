@@ -28,11 +28,15 @@ public class BlockGenerate1 : MonoBehaviour
         
         if (currentBlock < stopOn)
         {
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y - 4.88f,
-                transform.position.z - 13.33f);
-            GameObject NewBlock = Instantiate(block, pos, transform.rotation);
+            
+            Vector3 endpoint;
+            endpoint = this.transform.position - transform.forward * 14;
+            GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
-            Instantiate(objectToSpawn, pos + (objectToSpawn.transform.up),Quaternion.Euler(spawnRotation));
+            Instantiate(objectToSpawn, endpoint + (objectToSpawn.transform.up),Quaternion.Euler(spawnRotation));
+
+
+
         }
     }
 
