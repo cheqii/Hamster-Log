@@ -5284,7 +5284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735708374385532397, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
       propertyPath: m_Name
-      value: slope 1
+      value: slope
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}

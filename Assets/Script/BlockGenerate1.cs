@@ -30,10 +30,18 @@ public class BlockGenerate1 : MonoBehaviour
         {
             
             Vector3 endpoint;
-            endpoint = this.transform.position - transform.forward * 14;
+            endpoint = this.transform.position - transform.forward * transform.localScale.z;
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
-            Instantiate(objectToSpawn, endpoint + (objectToSpawn.transform.up),Quaternion.Euler(spawnRotation));
+
+            
+            Vector3 objectSpawnPoint = new Vector3(NewBlock.transform.position.x +
+                                                   Random.Range(-transform.localScale.x/2,transform.localScale.x/2),
+                NewBlock.transform.position.y + 10,
+                                                    NewBlock.transform.position.z +
+                                                    Random.Range(-transform.localScale.z/2,transform.localScale.z/2));
+            GameObject Obstacle = Instantiate(objectToSpawn, objectSpawnPoint ,Quaternion.Euler(spawnRotation));
+            Obstacle.AddComponent<RaycastPositionSet>();
 
 
 
