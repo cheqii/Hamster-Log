@@ -6,6 +6,8 @@ public class Hamster : MonoBehaviour
     [SerializeField] private GameObject hamster;
     [SerializeField] private GameObject blood;
     [SerializeField] private LogControl _logControl;
+
+    //private Hamster ham;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class Hamster : MonoBehaviour
         Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
         Destroy(hamster);
         Destroy(_logControl);
+        Destroy(_logControl.GetComponent<GroundCheck>());
         Destroy(this.gameObject);
     }
 
@@ -32,6 +35,8 @@ public class Hamster : MonoBehaviour
         if (other.transform.CompareTag("ground")) HamsterDie();
         
         if(other.gameObject.CompareTag("Obstacle")) HamsterDie();
+        
+        if(other.gameObject.CompareTag("InvisibleGround")) HamsterDie();
     }
     
 }

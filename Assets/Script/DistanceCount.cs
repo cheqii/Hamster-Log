@@ -16,9 +16,12 @@ public class DistanceCount : MonoBehaviour
     private float highScore;
     private void Awake()
     {
-        Debug.Log("Start Point Assign");
-        startPoint = hamster.GetComponent<Hamster>().transform.localPosition;
-        Debug.Log("Start at : " + startPoint);
+        if (hamster)
+        {
+            Debug.Log("Start Point Assign");
+            startPoint = hamster.GetComponent<Hamster>().transform.localPosition;
+            Debug.Log("Start at : " + startPoint);
+        }
     }
 
     // Start is called before the first frame update
