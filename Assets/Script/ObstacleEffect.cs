@@ -40,7 +40,7 @@ public class ObstacleEffect : MonoBehaviour
         if (speedEffect)
         {
             Debug.Log("Speed Boots");
-            player.GetComponent<Rigidbody>().AddForce(Vector3.right * speed, ForceMode.Impulse);
+            player.GetComponent<Rigidbody>().AddForce(Vector3.back * speed, ForceMode.Impulse);
         }
     }
 

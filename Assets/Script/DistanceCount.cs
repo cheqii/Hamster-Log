@@ -12,8 +12,18 @@ public class DistanceCount : MonoBehaviour
     private Vector2 currentPoint;
     private float distance;
     private float maxDistance;
+    public float MaxDistance
+    {
+        get => maxDistance;
+        set => maxDistance = value;
+    }
 
     private float highScore;
+    public float HighScore
+    {
+        get => highScore;
+        set => highScore = value;
+    }
     private void Awake()
     {
         if (hamster)
