@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Hamster : MonoBehaviour
 {
-
     [SerializeField] private GameObject hamster;
     [SerializeField] private GameObject blood;
     [SerializeField] private LogControl _logControl;
