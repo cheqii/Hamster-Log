@@ -6213,6 +6213,10 @@ PrefabInstance:
       propertyPath: rock
       value: 
       objectReference: {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
+    - target: {fileID: -2160424804770530820, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
+      propertyPath: stopOn
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2735708374385532369, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6333,6 +6337,10 @@ PrefabInstance:
     - target: {fileID: 7164468430481260332, guid: 75fa05ffea843ce4d961ae9ae5b9d5c0, type: 3}
       propertyPath: startPush
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164468430481260332, guid: 75fa05ffea843ce4d961ae9ae5b9d5c0, type: 3}
+      propertyPath: normalFriction
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7164468430628167687, guid: 75fa05ffea843ce4d961ae9ae5b9d5c0, type: 3}
       propertyPath: m_RootOrder

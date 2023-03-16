@@ -20,6 +20,23 @@ public class BlockGenerate1 : MonoBehaviour
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
 
+            if (Random.Range(1, 100) < 5)
+            {
+                
+                if (Random.Range(1, 3) == 1)
+                NewBlock.transform.position = new Vector3(
+                    NewBlock.transform.position.x + NewBlock.transform.localScale.x,
+                    NewBlock.transform.position.y,
+                    NewBlock.transform.position.z);
+                else
+                {
+                    NewBlock.transform.position = new Vector3(
+                        NewBlock.transform.position.x - NewBlock.transform.localScale.x,
+                        NewBlock.transform.position.y,
+                        NewBlock.transform.position.z);
+                }
+            }
+
 
             int loop;
             loop = Random.Range(0, GameData.Instance.GetObstacleMaxSpawn());
