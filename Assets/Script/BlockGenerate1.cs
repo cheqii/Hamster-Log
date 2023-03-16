@@ -22,7 +22,7 @@ public class BlockGenerate1 : MonoBehaviour
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
 
-            if (Random.Range(1, 100) < 5)
+            if (Random.Range(1, 100) < 5 && isSpawnObstacle == true)
             {
 
                 if (Random.Range(1, 3) == 1)
