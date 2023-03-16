@@ -14,6 +14,10 @@ public class ObstacleEffect : MonoBehaviour
     [Header("Speed Effect")] 
     [SerializeField] private float speedBoots = 8;
     [SerializeField] private bool speedEffect;
+    
+    [Header("TurnBack Effect")]
+    [SerializeField] private float turnBackForce = 50;
+    [SerializeField] private bool slowEffect;
 
     #region -Obstacle Effects-
 
@@ -40,7 +44,16 @@ public class ObstacleEffect : MonoBehaviour
         if (speedEffect)
         {
             Debug.Log("Speed Boots");
-            player.GetComponent<Rigidbody>().AddForce(Vector3.right * speed, ForceMode.Impulse);
+            player.GetComponent<Rigidbody>().AddForce(Vector3.back * speed, ForceMode.Impulse);
+        }
+    }
+    
+    public void Slow(GameObject player, float force)
+    {
+        if (slowEffect)
+        {
+            Debug.Log("Turn Back");
+            player.GetComponent<Rigidbody>().AddForce(Vector3.forward * force, ForceMode.Impulse);
         }
     }
 
@@ -60,7 +73,10 @@ public class ObstacleEffect : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("is Trigger");
             SpeedBoots(other.gameObject, speedBoots);
+            Slow(other.gameObject, turnBackForce);
+            JumpBoots(other.gameObject, jumpPadForce);
         }
     }
 }
