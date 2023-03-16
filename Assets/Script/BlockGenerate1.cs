@@ -48,10 +48,7 @@ public class BlockGenerate1 : MonoBehaviour
                     {
                         GameObject Obstacle = Instantiate(objectToSpawn, objectSpawnPoint, Quaternion.Euler(spawnRotation));
                         Obstacle.AddComponent<RaycastPositionSet>();
-
-
-              
-                
+                        
                     }
                 }
             }

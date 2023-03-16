@@ -261,6 +261,8 @@ MonoBehaviour:
   spinEffect: 0
   speedBoots: 8
   speedEffect: 1
+  turnBackForce: 5
+  slowEffect: 0
 --- !u!1 &8691719271366864105
 GameObject:
   m_ObjectHideFlags: 0

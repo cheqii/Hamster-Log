@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         if (!hamster)
         { 
+            Debug.Log("Game Over");
             Time.timeScale = 0.5f;
             scoreUI.SetActive(false);
             gameOverPanel.SetActive(true);
@@ -54,11 +54,7 @@ public class GameController : MonoBehaviour
                 Time.timeScale = 1;
                 gameOverPanel.SetActive(false);   
             }
-            if (isPaused)
-            {
-                Time.timeScale = 0;
-            }
-            
+            if (isPaused) Time.timeScale = 0;
         }
     }
 
@@ -81,11 +77,11 @@ public class GameController : MonoBehaviour
                 pausedPanel.SetActive(false);
             }
         }
-
     }
 
     public void Pause()
     {
+        Debug.Log("Game Pause");
         Time.timeScale = 0;
         isPaused = true;
     }
@@ -100,6 +96,7 @@ public class GameController : MonoBehaviour
             pausedPanel.SetActive(false);
         }
     }
+    
     public void Restart()
     {
         SceneManager.LoadScene(0);
