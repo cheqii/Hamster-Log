@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Gus's lab.unity
     guid: c64b7d1c247944d449a78959985ec415
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hamster Lab 1.unity
     guid: 08553eaa3080e2d4099d6e8b78d29ad8
+  - enabled: 1
+    path: Assets/Scenes/Gus Lab.unity
+    guid: 8c8887c0f95b22e48bbcaf1ec88df20c
   m_configObjects: {}

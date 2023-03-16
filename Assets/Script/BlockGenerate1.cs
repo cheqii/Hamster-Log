@@ -3,6 +3,8 @@ using UnityEngine;
 public class BlockGenerate1 : MonoBehaviour
 {
     [SerializeField] private GameObject block;
+    [SerializeField] private GameObject leftBlock;
+    [SerializeField] private GameObject rightBlock;
     [SerializeField] private int stopOn;
     [SerializeField] private int currentBlock;
     [SerializeField] private bool isSpawnObstacle = true;
@@ -19,6 +21,31 @@ public class BlockGenerate1 : MonoBehaviour
             endpoint = this.transform.position - transform.forward * transform.localScale.z;
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
+
+            if (Random.Range(1, 100) < 5 && isSpawnObstacle == true)
+            {
+
+                if (Random.Range(1, 3) == 1)
+                {
+                    NewBlock.transform.position = new Vector3(
+                        NewBlock.transform.position.x + NewBlock.transform.localScale.x,
+                        NewBlock.transform.position.y,
+                        NewBlock.transform.position.z);
+                    
+                    Instantiate(rightBlock, endpoint, transform.rotation);
+
+                }
+                else
+                {
+                    NewBlock.transform.position = new Vector3(
+                        NewBlock.transform.position.x - NewBlock.transform.localScale.x,
+                        NewBlock.transform.position.y,
+                        NewBlock.transform.position.z);
+                    
+                    Instantiate(leftBlock, endpoint, transform.rotation);
+
+                }
+            }
 
 
             int loop;

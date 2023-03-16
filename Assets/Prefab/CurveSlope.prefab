@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2735708374385532370}
   - component: {fileID: -2160424804770530820}
   m_Layer: 0
-  m_Name: slope
+  m_Name: CurveSlope
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,8 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 2735708374385532397}
-  leftBlock: {fileID: 5492150519835678774, guid: 2f94254f337421445bc4782667ca5523, type: 3}
-  rightBlock: {fileID: 2669294760680852811, guid: 3a8f4234a3721c149be471868f3b91c4, type: 3}
   stopOn: 500
   currentBlock: 0
-  isSpawnObstacle: 1
+  index: 0
