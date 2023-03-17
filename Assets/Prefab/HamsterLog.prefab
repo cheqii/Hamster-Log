@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 7164468430481260333}
   - component: {fileID: 7164468430481260332}
   - component: {fileID: 7164468430481260335}
-  - component: {fileID: 3221458074663851275}
   m_Layer: 0
   m_Name: HamsterLog
   m_TagString: Player
@@ -250,6 +249,7 @@ MonoBehaviour:
   turnSpeed: 20
   startPush: 30
   jumpPower: 10
+  speedLimit: 0
   logMaterial: {fileID: 13400000, guid: a46423997b1e6394e948350ef108e393, type: 2}
   normalFriction: 0.12
   brakeFriction: 0.4
@@ -265,21 +265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713a49eb7dfc7124aab593c7858d1c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3221458074663851275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164468430481260310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9addcc6f15224a98fc9efa6af7628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hamster: {fileID: 0}
-  blood: {fileID: 0}
-  _logControl: {fileID: 0}
 --- !u!1 &7164468430755517177
 GameObject:
   m_ObjectHideFlags: 0

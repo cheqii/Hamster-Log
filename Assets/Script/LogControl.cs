@@ -6,6 +6,7 @@ public class LogControl : MonoBehaviour
     [SerializeField] private int turnSpeed = 20;
     [SerializeField] private int startPush = 10;
     [SerializeField] private int jumpPower = 5;
+    [SerializeField] private int speedLimit;
     
     [Header("Log Physics")]
     [SerializeField] private PhysicMaterial logMaterial;
@@ -29,6 +30,16 @@ public class LogControl : MonoBehaviour
     void Update()
     {
         LogMovement();
+    }
+    
+    void FixedUpdate()
+    {
+        if(rb.velocity.magnitude > speedLimit)
+        {
+            rb.velocity = rb.velocity.normalized * speedLimit;
+        }
+        
+        rb.AddForce(Vector3.back / 10,ForceMode.VelocityChange);
     }
 
     public void LogMovement()
