@@ -18,8 +18,8 @@ public class BlockGenerate1 : MonoBehaviour
         if (currentBlock < stopOn)
         {
             Vector3 endpoint;
-            Vector3 gap = new Vector3(0, 0.01f, 0.01f);
-            endpoint = this.transform.position - transform.forward * transform.localScale.z;
+            Vector3 gap = new Vector3(0, 0.3f, 0);
+            endpoint = this.transform.position - transform.forward * transform.localScale.z - gap;
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
 
