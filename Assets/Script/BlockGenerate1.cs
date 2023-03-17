@@ -18,12 +18,12 @@ public class BlockGenerate1 : MonoBehaviour
         if (currentBlock < stopOn)
         {
             Vector3 endpoint;
-            Vector3 gap = new Vector3(0, 0.3f, 0);
+            Vector3 gap = new Vector3(0, 0.1f, 0);
             endpoint = this.transform.position - transform.forward * transform.localScale.z - gap;
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
 
-            if (Random.Range(1, 100) < 5 && isSpawnObstacle == true)
+            if (Random.Range(1, 100) < 10 && isSpawnObstacle == true)
             {
 
                 if (Random.Range(1, 3) == 1)
@@ -33,7 +33,7 @@ public class BlockGenerate1 : MonoBehaviour
                         NewBlock.transform.position.y,
                         NewBlock.transform.position.z);
                     
-                    Instantiate(rightBlock, endpoint, transform.rotation);
+                    //Instantiate(rightBlock, endpoint, transform.rotation);
 
                 }
                 else
@@ -43,7 +43,7 @@ public class BlockGenerate1 : MonoBehaviour
                         NewBlock.transform.position.y,
                         NewBlock.transform.position.z);
                     
-                    Instantiate(leftBlock, endpoint, transform.rotation);
+                    //Instantiate(leftBlock, endpoint, transform.rotation);
 
                 }
             }

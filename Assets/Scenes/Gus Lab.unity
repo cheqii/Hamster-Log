@@ -7215,7 +7215,7 @@ MonoBehaviour:
   turnSpeed: 30
   startPush: 5
   jumpPower: 10
-  speedLimit: 500
+  speedLimit: 40
   logMaterial: {fileID: 13400000, guid: a46423997b1e6394e948350ef108e393, type: 2}
   normalFriction: 0.12
   brakeFriction: 0.4
