@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     {
         GameOver();
         PausePanel();
+        
     }
 
     public void GameOver()
@@ -79,6 +80,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    #region -Button Functions-
+
+    public void ResetScore()
+    {
+        Debug.Log("Reset Highscore");
+        PlayerPrefs.DeleteKey("highscore");
+    }
+    
     public void Pause()
     {
         Debug.Log("Game Pause");
@@ -101,4 +110,7 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    #endregion
+    
 }
