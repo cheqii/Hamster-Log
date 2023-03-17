@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
   - {fileID: 6495570680920953046, guid: 9f40382d8d37362428477575fd4dcb96, type: 3}
   ObstacleChance: 1e000000280000001e000000
-  SpawnChance: 50
-  MaxSpawn: 3
+  SpawnChance: 15
+  MaxSpawn: 2
