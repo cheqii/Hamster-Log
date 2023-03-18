@@ -9,6 +9,8 @@ TagManager:
   - JumpPad
   - Tunnel
   - InvisibleGround
+  - MagneticField
+  - Magnet
   layers:
   - Default
   - TransparentFX

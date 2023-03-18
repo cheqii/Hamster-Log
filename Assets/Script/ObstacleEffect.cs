@@ -25,8 +25,19 @@ public class ObstacleEffect : MonoBehaviour
     {
         if (jumpEffect)
         {
-            Debug.Log("Jump Boots");
-            player.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
+            
+            if(this.gameObject.GetComponent<Collider>().isTrigger == true)
+            {
+                Debug.Log("Jump Triggered");
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
+            }
+            else
+            {
+                Debug.Log("Jump Collision");
+                player.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
+            }
+            // Debug.Log("Jump Boots");
+            // player.GetComponent<Rigidbody>().AddForce(Vector3.up * force, ForceMode.Impulse);
         }
     }
 

@@ -60,7 +60,7 @@ public class RandomChance : MonoBehaviour
         {
             inRange = false;
         }
-        Debug.Log("range : " + range + "is " + inRange);
+        // Debug.Log("range : " + range + "is " + inRange);
 
         return inRange;
     }

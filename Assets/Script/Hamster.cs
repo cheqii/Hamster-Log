@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Hamster : MonoBehaviour
@@ -5,18 +6,27 @@ public class Hamster : MonoBehaviour
     [SerializeField] private GameObject hamster;
     [SerializeField] private GameObject blood;
     [SerializeField] private LogControl _logControl;
+    
+    [Header("Magnetic Fields")]
+    [SerializeField] private GameObject magneticField;
 
-    //private Hamster ham;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject MagneticField
     {
-        
+        get => magneticField;
+        set => magneticField = value;
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool isMagnetic;
+
+    public bool IsMagnetic
     {
-        
+        get => isMagnetic;
+        set => isMagnetic = value;
+    }
+
+    private void Start()
+    {
+        magneticField = GameObject.FindGameObjectWithTag("MagneticField");
     }
 
     public void HamsterDie()
@@ -36,6 +46,8 @@ public class Hamster : MonoBehaviour
         if(other.gameObject.CompareTag("Obstacle")) HamsterDie();
         
         if(other.gameObject.CompareTag("InvisibleGround")) HamsterDie();
+        
+        if(other.CompareTag("Magnet")) magneticField.SetActive(true);
     }
     
 }

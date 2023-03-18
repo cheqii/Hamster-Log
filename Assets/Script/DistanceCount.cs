@@ -46,7 +46,6 @@ public class DistanceCount : MonoBehaviour
     {
         if (hamster)
         {
-            Debug.Log("Hamster distance");
             var position = hamster.transform.position;
             currentPoint = new Vector2(position.z, position.y);
             HamsterDistance();
