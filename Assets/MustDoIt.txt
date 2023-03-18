@@ -1,0 +1,15 @@
+- coin
+    - shop system
+
+- magnet (qiqi) 1hr
+
+- level unlock (gus) 1hr
+    - level data
+    - level select
+
+- hamster shop  
+    - hamster sprites
+    - hamster select
+    - hamster unlock
+
+- main menu

@@ -62,9 +62,9 @@ public class LogControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && _groundCheck.GetIsGround() == true) Jump(jumpPower);
             
             
-            if (Input.GetKey(KeyCode.A)) rb.AddForce(Vector3.right * Time.deltaTime * turnSpeed, ForceMode.VelocityChange);
+            if (Input.GetKey(KeyCode.A)) rb.AddForce(Vector3.right * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
             
-            if (Input.GetKey(KeyCode.D)) rb.AddForce(Vector3.left * Time.deltaTime * turnSpeed, ForceMode.VelocityChange);
+            if (Input.GetKey(KeyCode.D)) rb.AddForce(Vector3.left * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
             
             //hamster log brake
             if (Input.GetKeyDown(KeyCode.LeftShift)) Brake();
