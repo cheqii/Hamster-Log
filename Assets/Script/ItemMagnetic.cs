@@ -7,6 +7,7 @@ public class ItemMagnetic : MonoBehaviour
     [SerializeField] private bool itemIsMagnetic;
     [SerializeField] private float magneticForce;
     
+    private CoinSystem coinSystem;
     [Header("Magnetic Objects")]
     private Rigidbody rb; // item rigidbody
     private GameObject hamster; // player rigidbody
@@ -20,6 +21,8 @@ public class ItemMagnetic : MonoBehaviour
         hamster = GameObject.FindGameObjectWithTag("Player");
         magnet = GameObject.FindGameObjectWithTag("MagneticField");
         itemIsMagnetic = false;
+        
+        coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
     }
 
     // Update is called once per frame
@@ -31,12 +34,16 @@ public class ItemMagnetic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MagneticField")) itemIsMagnetic = true;
-        
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("MagneticField")) itemIsMagnetic = false;
+        if (other.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            //coinSystem.CoinCollect();
+        }
     }
 
     void Attract()

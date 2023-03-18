@@ -12,6 +12,7 @@ TagManager:
   - MagneticField
   - Magnet
   - Goal
+  - Coin
   layers:
   - Default
   - TransparentFX

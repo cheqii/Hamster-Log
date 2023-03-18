@@ -5,7 +5,7 @@
 
 - level unlock (gus) Finished
     - level data
-    - level select
+    - level select UI
 
 - hamster shop  
     - hamster sprites

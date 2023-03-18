@@ -6,7 +6,12 @@ public class Magnet : MonoBehaviour
 {
     [Header("Magnetic Settings")]
     [SerializeField] private bool isMagnetic;
-    public bool Ismagnetic { get { return isMagnetic; } set { isMagnetic = value; } }
+
+    public bool Ismagnetic
+    {
+        get => isMagnetic;
+        set => isMagnetic = value;
+    }
 
     private void Start()
     {
