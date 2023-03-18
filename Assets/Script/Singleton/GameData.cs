@@ -48,4 +48,9 @@ public class GameData : MonoBehaviour
         return _obstacle[level].laneSwitchPercent;
     }
     
+    public GameObject GetEndSlope(int level)
+    {
+        return _obstacle[level].EndSlope;
+    }
+    
 }
