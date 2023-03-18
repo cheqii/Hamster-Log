@@ -53,4 +53,9 @@ public class GameData : MonoBehaviour
         return _obstacle[level].EndSlope;
     }
     
+    public GameObject GetInvisible(int level)
+    {
+        return _obstacle[level].invisibleGround;
+    }
+    
 }

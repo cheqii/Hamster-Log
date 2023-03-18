@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &47380540
 Transform:
   m_ObjectHideFlags: 0
@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb920b761c65ae45b99b766ef876a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hamster: {fileID: 1437288249}
   scoreUI: {fileID: 1740778620}
   coinUI: {fileID: 34569135}
   gameOverPanel: {fileID: 413781397}
@@ -282,7 +281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 158819656}
   highScoreText: {fileID: 1038201028}
-  hamster: {fileID: 1437288249}
 --- !u!114 &76894404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f17c811a4b668b40aa32cb182db2b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hamster: {fileID: 1437288249}
   coinText: {fileID: 1680689624}
   totalCoinText: {fileID: 1004957598}
   amountCoin: 0
@@ -5572,7 +5569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &206155327
 Transform:
   m_ObjectHideFlags: 0
@@ -6485,7 +6482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &765565493
 Transform:
   m_ObjectHideFlags: 0
@@ -7559,6 +7556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 3133731082937201010, guid: 2f56460b6019ff94b87b0532487fa875, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3133731082937201011, guid: 2f56460b6019ff94b87b0532487fa875, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8450,17 +8451,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdbee56db10633246b35414ba3908609, type: 3}
---- !u!114 &1437288249 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3854293231539126615, guid: 75fa05ffea843ce4d961ae9ae5b9d5c0, type: 3}
-  m_PrefabInstance: {fileID: 7164468432047244237}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb9addcc6f15224a98fc9efa6af7628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1511127922
 GameObject:
   m_ObjectHideFlags: 0
@@ -9916,7 +9906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849895274640137616, guid: 46f57e302fe10e84ba9eed798a44f753, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6849895274640137644, guid: 46f57e302fe10e84ba9eed798a44f753, type: 3}
       propertyPath: m_RootOrder
@@ -9964,7 +9954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6849895274640137646, guid: 46f57e302fe10e84ba9eed798a44f753, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6849895274640137647, guid: 46f57e302fe10e84ba9eed798a44f753, type: 3}
       propertyPath: m_IsTrigger

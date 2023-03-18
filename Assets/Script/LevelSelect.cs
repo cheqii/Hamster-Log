@@ -6,17 +6,12 @@ using UnityEngine;
 public class LevelSelect : MonoBehaviour
 {
     [SerializeField] private BlockGenerate1 startBlock;
-    [SerializeField] private int lv;
 
-
-    private void Start()
-    {
-        ChangeLevel(lv-1);
-    }
 
     public void ChangeLevel(int _level)
     {
-        startBlock.SetLevel(_level,GameData.Instance.GetLaneSwitch(_level));
+        startBlock.SetLevel(_level-1,GameData.Instance.GetLaneSwitch(_level-1));
+        startBlock.GenerateLevel();
     }
 
 }
