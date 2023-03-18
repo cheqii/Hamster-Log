@@ -6571,7 +6571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e275e679acd663b4e9a096e0a826ea79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacle: {fileID: 11400000, guid: 4f584c9029a98aa428b62a95a9bb4179, type: 2}
+  _obstacle:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &901821656
 Transform:
   m_ObjectHideFlags: 0

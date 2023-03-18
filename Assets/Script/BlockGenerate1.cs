@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class BlockGenerate1 : MonoBehaviour
 {
+    [SerializeField] private int level;
+    
     [SerializeField] private GameObject block;
     [SerializeField] private GameObject leftBlock;
     [SerializeField] private GameObject rightBlock;
     [SerializeField] private int stopOn;
     [SerializeField] private int currentBlock;
+    [SerializeField] private int laneSwitchPercent = 5;
     [SerializeField] private bool isSpawnObstacle = true;
     private GameObject objectToSpawn;
     
@@ -23,7 +26,7 @@ public class BlockGenerate1 : MonoBehaviour
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
 
-            if (Random.Range(1, 100) < 10 && isSpawnObstacle == true)
+            if (Random.Range(1, 100) < laneSwitchPercent && isSpawnObstacle == true)
             {
 
                 if (Random.Range(1, 3) == 1)
@@ -50,7 +53,7 @@ public class BlockGenerate1 : MonoBehaviour
 
 
             int loop;
-            loop = Random.Range(0, GameData.Instance.GetObstacleMaxSpawn());
+            loop = Random.Range(0, GameData.Instance.GetObstacleMaxSpawn(level));
 
             if (isSpawnObstacle)
             {
@@ -65,14 +68,14 @@ public class BlockGenerate1 : MonoBehaviour
                 
                 
                     objectToSpawn = GameData.Instance.GetObstacle(
-                        RandomChance.Instance.GetRandomChance(GameData.Instance.GetObstacleChance()));
+                        RandomChance.Instance.GetRandomChance(GameData.Instance.GetObstacleChance(level)),level);
 
                     Vector3 spawnRotation = new Vector3(
                         objectToSpawn.transform.eulerAngles.x - 20f,
                         objectToSpawn.transform.eulerAngles.y,
                         objectToSpawn.transform.eulerAngles.z);
                     //chance of spawn
-                    if (GameData.Instance.GetObstacleSpawnChance() > (Random.Range(0, 100)))
+                    if (GameData.Instance.GetObstacleSpawnChance(level) > (Random.Range(0, 100)))
                     {
                         GameObject Obstacle = Instantiate(objectToSpawn, objectSpawnPoint, Quaternion.Euler(spawnRotation));
                         Obstacle.AddComponent<RaycastPositionSet>();
@@ -92,7 +95,13 @@ public class BlockGenerate1 : MonoBehaviour
         NewBlock.GetComponent<BlockGenerate1>().stopOn = stopOn;
         NewBlock.GetComponent<BlockGenerate1>().block = block;
         NewBlock.GetComponent<BlockGenerate1>().currentBlock = currentBlock + 1;
+        NewBlock.GetComponent<BlockGenerate1>().level = level;
+    }
 
+    public void SetLevel(int lv,int lane)
+    {
+        this.level = lv;
+        laneSwitchPercent = lane;
     }
     
     

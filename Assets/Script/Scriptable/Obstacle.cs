@@ -14,5 +14,8 @@ public class Obstacle : ScriptableObject
     
     [Header("NumberOfMaxObstacle")]
     public int MaxSpawn;
+    
+    [Header("laneSwitchPercent")]
+    public int laneSwitchPercent = 5;
 
 }
