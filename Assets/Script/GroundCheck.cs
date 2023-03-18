@@ -7,7 +7,8 @@ public class GroundCheck : MonoBehaviour
 
     private void Start()
     {
-        hamster = this.transform.Find("Hamster").GetComponent<Hamster>();
+        //hamster = this.transform.Find("Hamster").GetComponent<Hamster>();
+        hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
     }
 
     private void OnTriggerStay(Collider other)

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Hamster")] 
-    [SerializeField] private Hamster hamster;
+    private Hamster hamster;
 
     [Header("Score UI")] 
     [SerializeField] private GameObject scoreUI;
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         distanceCount = GetComponent<DistanceCount>();
         coinSystem = GetComponent<CoinSystem>();
     }

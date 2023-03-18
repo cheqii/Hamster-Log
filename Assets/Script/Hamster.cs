@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Net;
 using UnityEngine;
 
 public class Hamster : MonoBehaviour

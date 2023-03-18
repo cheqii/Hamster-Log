@@ -6,7 +6,7 @@ public class DistanceCount : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI highScoreText;
-    [SerializeField] private Hamster hamster;
+    private Hamster hamster;
 
     [Header("Distance Score")]
     private Vector2 startPoint;
@@ -28,6 +28,7 @@ public class DistanceCount : MonoBehaviour
     
     private void Awake()
     {
+        hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         if (hamster)
         {
             Debug.Log("Start Point Assign");
