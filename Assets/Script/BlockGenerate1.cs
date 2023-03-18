@@ -11,13 +11,24 @@ public class BlockGenerate1 : MonoBehaviour
     [SerializeField] private int currentBlock;
     [SerializeField] private int laneSwitchPercent = 5;
     [SerializeField] private bool isSpawnObstacle = true;
+
+    [SerializeField] private bool isStartSlope = false;
     private GameObject objectToSpawn;
+    
     
     
     // Start is called before the first frame update
     void Start()
     {
+        if (isStartSlope == false)
+        {
+            GenerateLevel();
+        }
+    }
 
+    public void GenerateLevel()
+    {
+        
         if (currentBlock < stopOn)
         {
             Vector3 endpoint;
@@ -25,6 +36,11 @@ public class BlockGenerate1 : MonoBehaviour
             endpoint = this.transform.position - transform.forward * transform.localScale.z - gap;
             GameObject NewBlock = Instantiate(block, endpoint, transform.rotation);
             SetBlock(NewBlock);
+            
+            //invisible ground
+            
+            GameObject IG = Instantiate(GameData.Instance.GetInvisible(level), endpoint + (Vector3.down*5), transform.rotation);
+
 
             if (Random.Range(1, 100) < laneSwitchPercent && isSpawnObstacle == true)
             {
@@ -93,8 +109,6 @@ public class BlockGenerate1 : MonoBehaviour
             GameObject EndBlock = Instantiate(GameData.Instance.GetEndSlope(level), endpoint, transform.rotation);
 
         }
-        
-        
     }
 
 
@@ -104,6 +118,8 @@ public class BlockGenerate1 : MonoBehaviour
         NewBlock.GetComponent<BlockGenerate1>().block = block;
         NewBlock.GetComponent<BlockGenerate1>().currentBlock = currentBlock + 1;
         NewBlock.GetComponent<BlockGenerate1>().level = level;
+        NewBlock.GetComponent<BlockGenerate1>().isStartSlope = false;
+
     }
 
     public void SetLevel(int lv,int lane)
@@ -111,6 +127,7 @@ public class BlockGenerate1 : MonoBehaviour
         this.level = lv;
         laneSwitchPercent = lane;
     }
+    
     
     
 }

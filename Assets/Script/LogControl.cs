@@ -16,11 +16,11 @@ public class LogControl : MonoBehaviour
     private Rigidbody rb;
     private GroundCheck _groundCheck;
 
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         _groundCheck = GetComponent<GroundCheck>();
-        rb.AddForce(Vector3.back * startPush, ForceMode.VelocityChange);
         LogSpin();
     }
 
@@ -28,6 +28,12 @@ public class LogControl : MonoBehaviour
     void Update()
     {
         LogMovement();
+    }
+
+    public void HamsterStart()
+    {
+        rb.isKinematic = false;
+        rb.AddForce(Vector3.back * startPush, ForceMode.VelocityChange);
     }
     
     void FixedUpdate()

@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        //Pause();
+        
         hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         distanceCount = GetComponent<DistanceCount>();
         coinSystem = GetComponent<CoinSystem>();

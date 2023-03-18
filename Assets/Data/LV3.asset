@@ -23,3 +23,4 @@ MonoBehaviour:
   SpawnChance: 20
   MaxSpawn: 3
   laneSwitchPercent: 20
+  invisibleGround: {fileID: 2735708374385532397, guid: 913e86180fe891d479344eae2f9da673, type: 3}

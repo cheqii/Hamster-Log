@@ -22,5 +22,8 @@ public class Obstacle : ScriptableObject
     
     [Header("laneSwitchPercent")]
     public int laneSwitchPercent = 5;
+    
+    [Header("invisible ground")]
+    public GameObject invisibleGround;
 
 }
