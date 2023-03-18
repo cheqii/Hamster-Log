@@ -6598,9 +6598,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacle:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4f584c9029a98aa428b62a95a9bb4179, type: 2}
+  - {fileID: 11400000, guid: 531707ded42335a4da1d768dd8e9e215, type: 2}
+  - {fileID: 11400000, guid: 8663315cb99b16b40b6e0de1a829ec8d, type: 2}
 --- !u!4 &901821656
 Transform:
   m_ObjectHideFlags: 0
@@ -8972,6 +8972,10 @@ PrefabInstance:
       propertyPath: rock
       value: 
       objectReference: {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
+    - target: {fileID: -2160424804770530820, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2735708374385532369, guid: c1cfe35ffeb21f148b855170ed2386e2, type: 3}
       propertyPath: m_RootOrder
       value: 8
