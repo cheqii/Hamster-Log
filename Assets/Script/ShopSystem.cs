@@ -9,11 +9,6 @@ public class ShopSystem : MonoBehaviour
 
     private CoinSystem coinSystem;
 
-    private void Awake()
-    {
-        // coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
-    }
-
     private void Start()
     {
         coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
@@ -23,12 +18,22 @@ public class ShopSystem : MonoBehaviour
     private void Update()
     {
         totalCoinText.text = coinSystem.TotalCoin.ToString();
-        // Purchase();
+    }
+
+    void AddItem(int id)
+    {
+        PlayerPrefs.SetInt(id.ToString(), 1);
+    }
+
+    public void Purchase(int id, int price, Items items)
+    {
+        if (coinSystem.TotalCoin >= price)
+        {
+            coinSystem.DecreaseCoin(price);
+            AddItem(id);
+            items.PriceText.text = "Use";
+        }
     }
     
-
-    public void Purchase()
-    {
-        
-    }
+    
 }

@@ -51,4 +51,18 @@ public class CoinSystem : MonoBehaviour
         totalCoinText.text = totalCoin.ToString();
         PlayerPrefs.SetInt("TotalCoin", totalCoin);
     }
+    
+    public void DecreaseCoin(int value)
+    {
+        totalCoin -= value;
+        totalCoinText.text = totalCoin.ToString();
+        PlayerPrefs.SetInt("TotalCoin", totalCoin);
+    }
+    
+    public void IncreaseCoin(int value)
+    {
+        totalCoin += value;
+        totalCoinText.text = totalCoin.ToString();
+        PlayerPrefs.SetInt("TotalCoin", totalCoin);
+    }
 }

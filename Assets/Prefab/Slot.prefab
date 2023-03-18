@@ -257,9 +257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ShopSystem, Assembly-CSharp
-        m_MethodName: Purchase
+      - m_Target: {fileID: 2233369490083570315}
+        m_TargetAssemblyTypeName: Items, Assembly-CSharp
+        m_MethodName: UnlockHamster
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 9085445684919701429}
   - component: {fileID: 9085445684919701419}
   - component: {fileID: 9085445684919701428}
+  - component: {fileID: 2233369490083570315}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -347,6 +348,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2233369490083570315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085445684919701430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58f919e2ebfcb1f4aaed8bff599776e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hamsterSkins: {fileID: 0}
+  hamsterSprites: {fileID: 9085445685114295169}
+  hamsterPrices: 0
+  priceText: {fileID: 9085445684171545249}
 --- !u!1 &9085445685114295171
 GameObject:
   m_ObjectHideFlags: 0

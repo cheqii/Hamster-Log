@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class HamsterSkins : ScriptableObject
 {
     public Sprite hamssterImage;
+
+    public int ID;
     
     public int price;
 }
