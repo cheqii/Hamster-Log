@@ -1,0 +1,19 @@
+- coin (qiqi)
+    - shop system
+
+- magnet (qiqi) Finished
+
+- level unlock (gus) Finished
+    - level data
+    - level select UI
+
+- hamster shop  
+    - hamster sprites
+    - hamster select
+    - hamster unlock
+
+- main menu
+
+- credit
+
+- distance meter (gus)

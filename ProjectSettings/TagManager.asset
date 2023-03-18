@@ -7,6 +7,12 @@ TagManager:
   - ground
   - Obstacle
   - JumpPad
+  - Tunnel
+  - InvisibleGround
+  - MagneticField
+  - Magnet
+  - Goal
+  - Coin
   layers:
   - Default
   - TransparentFX

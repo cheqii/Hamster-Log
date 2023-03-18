@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1ef731dc29f4a4e8ffe49bedd117b5, type: 3}
+  m_Name: LV3
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 7501164642879770473, guid: 0b635289e8cb9be45a97379a4b781497, type: 3}
+  - {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
+  - {fileID: 6495570680920953046, guid: 9f40382d8d37362428477575fd4dcb96, type: 3}
+  - {fileID: 509738190878763238, guid: 2c25e70e4719af54f84814fac7ba708f, type: 3}
+  - {fileID: 509738190878763238, guid: 6c95f21a3028430409322c1e278958a0, type: 3}
+  EndSlope: {fileID: 2735708374385532397, guid: afc731ab81de2ed4082703bdcb8db83c, type: 3}
+  ObstacleChance: 0a0000000a000000000000002800000028000000
+  SpawnChance: 20
+  MaxSpawn: 3
+  laneSwitchPercent: 20

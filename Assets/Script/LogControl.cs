@@ -6,6 +6,7 @@ public class LogControl : MonoBehaviour
     [SerializeField] private int turnSpeed = 20;
     [SerializeField] private int startPush = 10;
     [SerializeField] private int jumpPower = 5;
+    [SerializeField] private int speedLimit;
     
     [Header("Log Physics")]
     [SerializeField] private PhysicMaterial logMaterial;
@@ -13,15 +14,7 @@ public class LogControl : MonoBehaviour
     [SerializeField] private float brakeFriction;
 
     private Rigidbody rb;
-
-    public Rigidbody RB
-    {
-        get => rb;
-        set => rb = value;
-    }
     private GroundCheck _groundCheck;
-    
-
 
     void Start()
     {
@@ -29,73 +22,63 @@ public class LogControl : MonoBehaviour
         _groundCheck = GetComponent<GroundCheck>();
         rb.AddForce(Vector3.back * startPush, ForceMode.VelocityChange);
         LogSpin();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.A))
+        LogMovement();
+    }
+    
+    void FixedUpdate()
+    {
+        if(rb.velocity.magnitude > speedLimit)
         {
-            rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
-            ChangeRotate(-30);
+            rb.velocity = rb.velocity.normalized * speedLimit;
+        }
+        
+        rb.AddForce(Vector3.back / 10,ForceMode.VelocityChange);
+    }
 
-        }
-        else if(Input.GetKeyUp(KeyCode.A))
+    public void LogMovement()
+    {
+        if (Time.timeScale == 1)
         {
-            ChangeRotate(0);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
-            ChangeRotate(30);
-        }
-        else if(Input.GetKeyUp(KeyCode.D))
-        {
-            ChangeRotate(0);
-        }
-        
-        
-        if (Input.GetKeyDown(KeyCode.Space) && _groundCheck.GetIsGround() == true)
-        {
-            Jump(jumpPower);
-        }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
+                ChangeRotate(-30);
+            }
+            else if(Input.GetKeyUp(KeyCode.A)) ChangeRotate(0);
+            
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
+                ChangeRotate(30);
+            }
+            else if(Input.GetKeyUp(KeyCode.D)) ChangeRotate(0);
+            
+            // hamster jump
+            if (Input.GetKeyDown(KeyCode.Space) && _groundCheck.GetIsGround() == true) Jump(jumpPower);
+            
+            
+            if (Input.GetKey(KeyCode.A)) rb.AddForce(Vector3.right * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
+            
+            if (Input.GetKey(KeyCode.D)) rb.AddForce(Vector3.left * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
+            
+            //hamster log brake
+            if (Input.GetKeyDown(KeyCode.LeftShift)) Brake();
 
-
-        if (Input.GetKey(KeyCode.A))
-        {
-
-            rb.AddForce(Vector3.right * Time.deltaTime * turnSpeed, ForceMode.VelocityChange);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-
-            rb.AddForce(Vector3.left * Time.deltaTime * turnSpeed, ForceMode.VelocityChange);
-        }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                ChangeRotate(0);
+                logMaterial.staticFriction = normalFriction;
+                logMaterial.dynamicFriction = normalFriction;
+            }
         
-        
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Brake();
+            // hamster log spinning 
+            if (Input.GetKey(KeyCode.R)) LogSpin();
         }
-        
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            ChangeRotate(0);
-            logMaterial.staticFriction = normalFriction;
-            logMaterial.dynamicFriction = normalFriction;
-        }
-        
-        if (Input.GetKey(KeyCode.R))
-        {
-            LogSpin();
-        }
-
-
-
     }
 
     public void Jump(int power)
@@ -118,6 +101,5 @@ public class LogControl : MonoBehaviour
     private void ChangeRotate(int r)
     {
         transform.eulerAngles  = new Vector3(transform.eulerAngles.x, r, transform.eulerAngles.z);
-
     }
 }

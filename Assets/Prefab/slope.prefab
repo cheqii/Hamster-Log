@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2735708374385532368}
   - component: {fileID: 2735708374385532371}
   - component: {fileID: 2735708374385532370}
-  - component: {fileID: 2735708374385532374}
+  - component: {fileID: -2160424804770530820}
   m_Layer: 0
   m_Name: slope
   m_TagString: ground
@@ -27,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2735708374385532397}
-  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 10, y: 1, z: 14.181601}
+  m_LocalScale: {x: 15, y: 1, z: 14.181601}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2735708374385532368
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92,13 +92,13 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2735708374385532397}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a15b79ed1a674624e96c0d2121e66bf5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2735708374385532374
+--- !u!114 &-2160424804770530820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,9 +107,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2735708374385532397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82434d6d628307347bc211f318e46714, type: 3}
+  m_Script: {fileID: 11500000, guid: 38a150875feba7e4bae93f944468179a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 0}
-  stopOn: 20
+  block: {fileID: 2735708374385532397}
+  leftBlock: {fileID: 5492150519835678774, guid: 2f94254f337421445bc4782667ca5523, type: 3}
+  rightBlock: {fileID: 2669294760680852811, guid: 3a8f4234a3721c149be471868f3b91c4, type: 3}
+  stopOn: 500
   currentBlock: 0
+  isSpawnObstacle: 1
