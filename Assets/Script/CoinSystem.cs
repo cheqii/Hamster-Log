@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinSystem : MonoBehaviour
 {
-    [SerializeField] private Hamster hamster;
+    private Hamster hamster;
     
     [Header("Coin UI")]
     [SerializeField] private TextMeshProUGUI coinText;
@@ -12,6 +12,11 @@ public class CoinSystem : MonoBehaviour
     
     [Header("Coin Count")]
     [SerializeField] private int amountCoin;
+
+    private void Awake()
+    {
+        hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
+    }
 
     public int AmountCoin
     {
