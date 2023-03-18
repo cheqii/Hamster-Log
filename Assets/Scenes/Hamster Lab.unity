@@ -688,6 +688,7 @@ GameObject:
   - component: {fileID: 76894403}
   - component: {fileID: 76894404}
   - component: {fileID: 76894405}
+  - component: {fileID: 76894406}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -776,6 +777,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startBlock: {fileID: 1722021957}
+--- !u!114 &76894406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76894400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24aad1b96ba0daf47a75e765576b9ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalCoinText: {fileID: 1678767561}
+  hamsterSkins:
+  - {fileID: 11400000, guid: 04cf69902feb6b449bed78240c542cb3, type: 2}
+  - {fileID: 11400000, guid: d17821d1968589a489d3f0b10e28e4aa, type: 2}
+  - {fileID: 11400000, guid: 973ff993903ccf6499fe1ccb80ba21d8, type: 2}
+  - {fileID: 11400000, guid: 3f0c3c6e2b2ebe84baa1450174182a4d, type: 2}
 --- !u!1 &79425552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,7 +6252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &214579796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6291,10 +6310,10 @@ RectTransform:
   m_Father: {fileID: 1147110137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75, y: -75}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &240948751
 MonoBehaviour:
@@ -9164,7 +9183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &965821144
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14285,8 +14304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75, y: -0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -76.25, y: 0}
+  m_SizeDelta: {x: -152.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853398787
 MonoBehaviour:
@@ -14373,7 +14392,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 2.290329, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
