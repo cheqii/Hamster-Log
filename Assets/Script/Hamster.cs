@@ -33,9 +33,9 @@ public class Hamster : MonoBehaviour
         
         if(other.CompareTag("Magnet"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); // destroy the magnet
             magnet.Ismagnetic = true;
-            StartCoroutine(magnet.ActiveMagnetic());
+            StartCoroutine(magnet.MagnetActivate());
         }
     }
 }
