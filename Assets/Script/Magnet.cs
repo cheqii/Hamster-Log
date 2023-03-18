@@ -1,38 +1,78 @@
+using System;
 using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    [Header("Magnetic Settings")]
-    [SerializeField] private static bool _isMagnetic;
+    // [Header("Magnetic Settings")]
+    // public static bool Instance { get; private set; }
     
-    [Header("Magnetic Fields")]
-    [SerializeField] private GameObject magneticField;
+    //[Header("Magnetic Fields")]
+    //[SerializeField] private GameObject magneticField;
     // Start is called before the first frame update
-    void Start()
+
+    // [Header("Magnetic Fields")]
+    //
+    // [SerializeField] private bool isMagnetic;
+    //
+    // public bool IsMagnetic
+    // {
+    //     get => isMagnetic;
+    //     set => isMagnetic = value;
+    // }
+    //
+    // private void Start()
+    // {
+    //     isMagnetic = false;
+    //     this.gameObject.SetActive(false);
+    // }
+
+    private Hamster hamster;
+
+    private void Start()
     {
-        //magneticField = GameObject.FindGameObjectWithTag("MagneticField");
-        _isMagnetic = false;
-        magneticField.SetActive(false);
+        hamster = GameObject.Find("Hamster").GetComponent<Hamster>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Magnet"))
         {
             Debug.Log("Hamster get magnet");
-            Destroy(this.gameObject);
+            hamster.IsMagnetic = true;
+            //isMagnetic = true;
             ActivateMagnet();
+            Destroy(other.gameObject);
         }
     }
 
     void ActivateMagnet()
-    { 
-        if (_isMagnetic)
+    {
+
+        if (hamster.IsMagnetic)
         {
-            magneticField.SetActive(true);
-            Invoke("ActivateMagnet", 10f);
-            _isMagnetic = false;
-            magneticField.SetActive(false);
+            Debug.Log("magnet in hamster");
+            this.gameObject.SetActive(true);
+            Invoke("ActivateMagnet", 5f);
+            this.gameObject.SetActive(false);
         }
+        // if (isMagnetic)
+        // {
+        //     Debug.Log("MagneticField is already active");
+        //     this.gameObject.SetActive(true);
+        //     Invoke("ActivateMagnet", 5f);
+        //     isMagnetic = false;
+        //     this.gameObject.SetActive(false);
+        // }
+        
+        
+        // if (_isMagnetic)
+        // {
+        //     Debug.Log("Magnet Activated");
+        //     //magneticField.gameObject.SetActive(true);
+        //     Invoke("ActivateMagnet", 10f);
+        //     _isMagnetic = false;
+        //     //magneticField.SetActive(false);
+        // }
+        
     }
 }

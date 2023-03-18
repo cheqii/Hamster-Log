@@ -12,7 +12,6 @@ public class LogControl : MonoBehaviour
     [SerializeField] private PhysicMaterial logMaterial;
     [SerializeField] private float normalFriction = 0.12f;
     [SerializeField] private float brakeFriction;
-    
 
     private Rigidbody rb;
     private GroundCheck _groundCheck;
@@ -23,7 +22,6 @@ public class LogControl : MonoBehaviour
         _groundCheck = GetComponent<GroundCheck>();
         rb.AddForce(Vector3.back * startPush, ForceMode.VelocityChange);
         LogSpin();
-
     }
 
     // Update is called once per frame

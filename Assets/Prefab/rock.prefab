@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2098423d46fa3fd4f9907ad5adbd2d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemIsMagnetic: 1
-  magneticForce: -10000
+  itemIsMagnetic: 0
+  magneticForce: 1500
 --- !u!54 &-3433723277276957998
 Rigidbody:
   m_ObjectHideFlags: 0

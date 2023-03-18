@@ -10,6 +10,7 @@ TagManager:
   - Tunnel
   - InvisibleGround
   - MagneticField
+  - Magnet
   layers:
   - Default
   - TransparentFX
