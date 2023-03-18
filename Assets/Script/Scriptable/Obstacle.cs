@@ -6,8 +6,13 @@ public class Obstacle : ScriptableObject
     [Header("ObstacleInThisLevel")]
     public GameObject[] Objects;
     
+    [Header("Goal")]
+    public GameObject EndSlope;
+    
     [Header("ChanceOfObstacle")]
     public int[] ObstacleChance;
+    
+ 
     
     [Header("ChanceOfSpawningObstacle (percent)")]
     public int SpawnChance;

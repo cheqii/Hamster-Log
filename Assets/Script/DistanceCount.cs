@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DistanceCount : MonoBehaviour
@@ -74,5 +75,10 @@ public class DistanceCount : MonoBehaviour
             highScore = maxDistance;
             PlayerPrefs.SetFloat("highscore", highScore);
         }
+    }
+
+    public int GetDistance()
+    {
+        return distance.ConvertTo<int>();
     }
 }

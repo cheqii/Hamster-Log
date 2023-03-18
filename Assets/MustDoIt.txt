@@ -1,9 +1,9 @@
-- coin (qiqi) 
+- coin (qiqi)
     - shop system
 
-- magnet (qiqi) 1hr ** finished
+- magnet (qiqi) Finished
 
-- level unlock (gus) 1hr
+- level unlock (gus) Finished
     - level data
     - level select UI
 
@@ -13,3 +13,7 @@
     - hamster unlock
 
 - main menu
+
+- credit
+
+- distance meter (gus)

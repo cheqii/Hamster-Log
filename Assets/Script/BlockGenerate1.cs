@@ -85,6 +85,14 @@ public class BlockGenerate1 : MonoBehaviour
             }
             
         }
+        else
+        {
+            Vector3 endpoint;
+            Vector3 gap = new Vector3(0, 0.1f, 0);
+            endpoint = this.transform.position - transform.forward * transform.localScale.z - gap;
+            GameObject EndBlock = Instantiate(GameData.Instance.GetEndSlope(level), endpoint, transform.rotation);
+
+        }
         
         
     }
