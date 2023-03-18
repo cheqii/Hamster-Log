@@ -1,5 +1,6 @@
-- coin (qiqi)
-    - shop system Finished
+- coin system (qiqi) finished
+    
+- shop system
 
 - magnet (qiqi) Finished
 
@@ -16,4 +17,4 @@
 
 - credit
 
-- distance meter (gus)
+- distance meter (gus) finished
