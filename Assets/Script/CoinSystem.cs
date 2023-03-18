@@ -12,10 +12,20 @@ public class CoinSystem : MonoBehaviour
     
     [Header("Coin Count")]
     [SerializeField] private int amountCoin;
-    public int AmountCoin { get { return amountCoin; } set { amountCoin = value; } }
+
+    public int AmountCoin
+    {
+        get => amountCoin;
+        set => amountCoin = value;
+    }
     
     [SerializeField] private int totalCoin;
-    public int TotalCoin { get { return totalCoin; } set { totalCoin = value; } }
+
+    public int TotalCoin
+    {
+        get => totalCoin;
+        set => totalCoin = value;
+    }
 
     void Start()
     {

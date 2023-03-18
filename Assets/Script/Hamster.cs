@@ -17,7 +17,7 @@ public class Hamster : MonoBehaviour
     public void HamsterDie()
     {
         Debug.Log("Hamster is dead");
-        coinSystem.TotalCoinCount();
+        coinSystem.TotalCoinCount(); // to counting all coins
         Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
         Destroy(hamster);
         Destroy(_logControl);

@@ -34,7 +34,6 @@ public class ItemMagnetic : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("MagneticField")) itemIsMagnetic = true;
-        
     }
 
     private void OnTriggerExit(Collider other)
@@ -43,8 +42,7 @@ public class ItemMagnetic : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(this.gameObject);
-            // coinSystem.CoinCollect();
-            // Debug.Log("Coin + in magnet");
+            //coinSystem.CoinCollect();
         }
     }
 

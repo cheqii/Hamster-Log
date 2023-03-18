@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             
             // display coin and total coin on game over panel
             coinText.text = coinSystem.AmountCoin.ToString();
-            totalCoinText.text = coinSystem.TotalCoin.ToString();
+            totalCoinText.text = "Total Coins : " + coinSystem.TotalCoin.ToString();
 
         }
         else
