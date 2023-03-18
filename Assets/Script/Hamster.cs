@@ -11,10 +11,13 @@ public class Hamster : MonoBehaviour
     
     [Header("Magnetic Fields")]
     [SerializeField] private Magnet magnet;
+    
+    [SerializeField] private CoinSystem coinSystem;
 
     public void HamsterDie()
     {
         Debug.Log("Hamster is dead");
+        coinSystem.TotalCoinCount();
         Instantiate(blood, hamster.transform.position, hamster.transform.rotation);
         Destroy(hamster);
         Destroy(_logControl);
@@ -33,10 +36,16 @@ public class Hamster : MonoBehaviour
         
         if(other.CompareTag("Magnet"))
         {
-            Debug.Log("Take Magnet");
             Destroy(other.gameObject);// destroy the magnet
             magnet.Ismagnetic = true;
             StartCoroutine(magnet.MagnetActivate());
+        }
+
+        if (other.CompareTag("Coin"))
+        {
+            Debug.Log("Get Coin");
+            Destroy(other.gameObject);
+            coinSystem.CoinCollect();
         }
     }
 }

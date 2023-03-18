@@ -1,11 +1,11 @@
-- coin
+- coin (qiqi) 
     - shop system
 
-- magnet (qiqi) 1hr
+- magnet (qiqi) 1hr ** finished
 
 - level unlock (gus) 1hr
     - level data
-    - level select
+    - level select UI
 
 - hamster shop  
     - hamster sprites
