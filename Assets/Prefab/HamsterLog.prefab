@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3090275639149950421}
   - component: {fileID: 6159747193062369456}
   - component: {fileID: 578003614925232689}
-  - component: {fileID: 8394401800248481137}
+  - component: {fileID: 1626764338640492895}
   m_Layer: 0
   m_Name: Magnetic Field
   m_TagString: MagneticField
@@ -98,7 +98,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8394401800248481137
+--- !u!114 &1626764338640492895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248c8958fbeda2e4ba32df1a223b9f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMagnetic: 0
 --- !u!1 &7164468430090141690
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
   blood: {fileID: 2486864602928570452, guid: bf594371b39ee394e93b937aca9d3cfc, type: 3}
   _logControl: {fileID: 7164468430481260332}
   magneticField: {fileID: 2699727741506725788}
+  magnet: {fileID: 1626764338640492895}
 --- !u!1 &7164468430481260310
 GameObject:
   m_ObjectHideFlags: 0

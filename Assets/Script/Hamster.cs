@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Net;
 using UnityEngine;
 
 public class Hamster : MonoBehaviour
@@ -8,26 +10,7 @@ public class Hamster : MonoBehaviour
     [SerializeField] private LogControl _logControl;
     
     [Header("Magnetic Fields")]
-    [SerializeField] private GameObject magneticField;
-
-    public GameObject MagneticField
-    {
-        get => magneticField;
-        set => magneticField = value;
-    }
-
-    private bool isMagnetic;
-
-    public bool IsMagnetic
-    {
-        get => isMagnetic;
-        set => isMagnetic = value;
-    }
-
-    private void Start()
-    {
-        magneticField = GameObject.FindGameObjectWithTag("MagneticField");
-    }
+    [SerializeField] private Magnet magnet;
 
     public void HamsterDie()
     {
@@ -36,6 +19,7 @@ public class Hamster : MonoBehaviour
         Destroy(hamster);
         Destroy(_logControl);
         Destroy(_logControl.GetComponent<GroundCheck>());
+        Destroy(magnet);
         Destroy(this.gameObject);
     }
 
@@ -47,7 +31,11 @@ public class Hamster : MonoBehaviour
         
         if(other.gameObject.CompareTag("InvisibleGround")) HamsterDie();
         
-        if(other.CompareTag("Magnet")) magneticField.SetActive(true);
+        if(other.CompareTag("Magnet"))
+        {
+            Destroy(other.gameObject);
+            magnet.Ismagnetic = true;
+            StartCoroutine(magnet.ActiveMagnetic());
+        }
     }
-    
 }
