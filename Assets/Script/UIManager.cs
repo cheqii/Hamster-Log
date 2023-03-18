@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     private LogControl _logControl;
     private LevelSelect _levelSelect;
+    private GameManager _gameManager;
     
     [Header("Start Button")] 
     [SerializeField] private GameObject[] St_Close;
@@ -19,12 +20,17 @@ public class UIManager : MonoBehaviour
     [Header("Start Game Button")] 
     [SerializeField] private GameObject[] Sg_Close;
     [SerializeField] private GameObject[] Sg_Open;
+    
+    [Header("You Win Ui")] 
+    [SerializeField] private GameObject[] Uw_Close;
+    [SerializeField] private GameObject[] Uw_Open;
 
     
     private void Start()
     {
         _logControl = FindObjectOfType<LogControl>().GetComponent<LogControl>();
         _levelSelect= FindObjectOfType<LevelSelect>().GetComponent<LevelSelect>();
+        _gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
     public void StartButton()
@@ -59,6 +65,13 @@ public class UIManager : MonoBehaviour
     {
         _levelSelect.ChangeLevel(3);
         StartGame();
+    }
+    
+    public void YouWin()
+    {
+        OpenAndClose(Uw_Close, Uw_Open);
+        _gameManager.Pause();
+
     }
     
     
