@@ -12,14 +12,7 @@ public class ShopSystem : MonoBehaviour
 
     private void Start()
     {
-        items = FindObjectOfType<Items>().GetComponent<Items>();
         coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
-        totalCoinText.text = coinSystem.TotalCoin.ToString();
-    }
-
-    private void Update()
-    {
-        totalCoinText.text = coinSystem.TotalCoin.ToString();
     }
 
     void AddItem(int id)
@@ -41,6 +34,11 @@ public class ShopSystem : MonoBehaviour
             if(coinSystem.TotalCoin < price) Debug.Log("Not enough coins");
             if(PlayerPrefs.GetInt(id.ToString()) == 1) Debug.Log("Already purchased");
         }
+    }
+
+    public void UpdateCoin()
+    {
+        totalCoinText.text = coinSystem.TotalCoin.ToString();
     }
 
     public void ResetShop(int id)

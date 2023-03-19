@@ -31,21 +31,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextPaused;
     [SerializeField] private TextMeshProUGUI highScoreTextPaused;
 
+    [Header("Shop Panel")]
+    private ShopSystem shopSystem;
 
     private void Start()
     {
-        //Pause();
-        
         hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         distanceCount = GetComponent<DistanceCount>();
         coinSystem = GetComponent<CoinSystem>();
+        shopSystem = GetComponent<ShopSystem>();
     }
 
     public void Update()
     {
         GameOver();
         PausePanel();
-        
+        shopSystem.UpdateCoin();
     }
 
     public void GameOver()
