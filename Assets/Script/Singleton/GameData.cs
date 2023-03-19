@@ -68,4 +68,8 @@ public class GameData : MonoBehaviour
         return _levelDatas[level]._Skybox;
     }
     
+    public GameObject GetEnemy(int level)
+    {
+        return _levelDatas[level]._enemy;
+    }
 }

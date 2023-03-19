@@ -27,3 +27,4 @@ MonoBehaviour:
   invisibleGround: {fileID: 2735708374385532397, guid: 913e86180fe891d479344eae2f9da673, type: 3}
   EndSlope: {fileID: 2735708374385532397, guid: afc731ab81de2ed4082703bdcb8db83c, type: 3}
   _Skybox: {fileID: 2100000, guid: 169a1b8f06c17c84e8de491f2bfef986, type: 2}
+  _enemy: {fileID: 23846363339391140, guid: 1f2d925e6165c994a9c15bbab6c13b1f, type: 3}

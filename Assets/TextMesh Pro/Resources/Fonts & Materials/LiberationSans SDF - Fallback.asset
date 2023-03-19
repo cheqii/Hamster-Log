@@ -450,6 +450,34 @@ MonoBehaviour:
     m_Y: 156
     m_Width: 60
     m_Height: 82
+  - m_X: 403
+    m_Y: 0
+    m_Width: 70
+    m_Height: 78
+  - m_X: 0
+    m_Y: 159
+    m_Width: 57
+    m_Height: 65
+  - m_X: 282
+    m_Y: 66
+    m_Width: 57
+    m_Height: 66
+  - m_X: 190
+    m_Y: 81
+    m_Width: 59
+    m_Height: 81
+  - m_X: 101
+    m_Y: 127
+    m_Width: 44
+    m_Height: 81
+  - m_X: 403
+    m_Y: 78
+    m_Width: 61
+    m_Height: 66
+  - m_X: 339
+    m_Y: 82
+    m_Width: 60
+    m_Height: 82
   m_FreeGlyphRects:
   - m_X: 282
     m_Y: 0
@@ -527,6 +555,21 @@ MonoBehaviour:
     kerningPairs: []
   m_FontFeatureTable:
     m_GlyphPairAdjustmentRecords:
+    - m_FirstAdjustmentRecord:
+        m_GlyphIndex: 73
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: -1.546875
+          m_YAdvance: 0
+      m_SecondAdjustmentRecord:
+        m_GlyphIndex: 73
+        m_GlyphValueRecord:
+          m_XPlacement: 0
+          m_YPlacement: 0
+          m_XAdvance: 0
+          m_YAdvance: 0
+      m_FeatureLookupFlags: 0
     - m_FirstAdjustmentRecord:
         m_GlyphIndex: 73
         m_GlyphValueRecord:
