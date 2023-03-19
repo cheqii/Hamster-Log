@@ -62,5 +62,10 @@ public class GameData : MonoBehaviour
     {
         return _levelDatas[level].LevelDistance;
     }
+
+    public Material GetSkybox(int level)
+    {
+        return _levelDatas[level]._Skybox;
+    }
     
 }

@@ -26,5 +26,8 @@ public class LevelData : ScriptableObject
     
     [Header("Goal")]
     public GameObject EndSlope;
+    
+    [Header("Skybox")]
+    public Material _Skybox;
 
 }
