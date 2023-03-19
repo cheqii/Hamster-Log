@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -51,8 +52,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         if (!hamster)
-        { 
-            Debug.Log("Game Over");
+        {
             Time.timeScale = 0.5f;
             scoreUI.SetActive(false);
             coinUI.SetActive(false);
@@ -130,12 +130,11 @@ public class GameManager : MonoBehaviour
             pausedPanel.SetActive(false);
         }
     }
-    
+
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadSceneAsync(1);
     }
-
     #endregion
-    
+
 }
