@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932ffc3a25c58d74d9dcc4a05e9750da, type: 3}
   m_Name: ham4
   m_EditorClassIdentifier: 
-  hamssterImage: {fileID: 21300000, guid: cd06409258b14404f8e761f33eb88c5d, type: 3}
+  hamssterImage: {fileID: 21300000, guid: d9d8199360039c441b31a018d8b69e5b, type: 3}
   ID: 3
   price: 1000

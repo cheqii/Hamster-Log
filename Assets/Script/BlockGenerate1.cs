@@ -122,10 +122,11 @@ public class BlockGenerate1 : MonoBehaviour
 
     }
 
-    public void SetLevel(int lv,int lane)
+    public void SetLevel(int lv,int lane,int dist)
     {
         this.level = lv;
         laneSwitchPercent = lane;
+        stopOn = dist;
     }
     
     

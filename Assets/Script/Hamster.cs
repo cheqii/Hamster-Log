@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hamster : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class Hamster : MonoBehaviour
     [SerializeField] private Magnet magnet;
     
     [SerializeField] private CoinSystem coinSystem;
+    
+    [SerializeField] private HamsterSkins[] skins;
+    private SpriteRenderer HamsterSkin;
+
 
     public void HamsterDie()
     {
@@ -21,6 +27,25 @@ public class Hamster : MonoBehaviour
         Destroy(_logControl.GetComponent<GroundCheck>());
         Destroy(magnet);
         Destroy(this.gameObject);
+    }
+
+    private void Start()
+    {
+        HamsterSkin = GetComponent<SpriteRenderer>();
+        int currentSkin = PlayerPrefs.GetInt("currentSkin",0);
+        ChangeHamsterSkin(skins[currentSkin].hamssterImage,currentSkin);
+    }
+
+    public void ChangeHamsterSkin(Sprite skin,int ID)
+    {
+        if (PlayerPrefs.GetInt(ID.ToString()) == 1)
+        {
+            HamsterSkin.sprite = skin;
+        }
+        else
+        {
+            Debug.Log("shit");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
