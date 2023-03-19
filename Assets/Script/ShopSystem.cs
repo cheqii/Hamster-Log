@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -34,6 +33,9 @@ public class ShopSystem : MonoBehaviour
             items.PriceText.text = "Use";
         }
     }
-    
-    
+
+    public void ResetShop(int id)
+    {
+        PlayerPrefs.DeleteKey(id.ToString());
+    }
 }
