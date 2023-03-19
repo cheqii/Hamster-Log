@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BlockGenerate1 : MonoBehaviour
+public class BlockGenerate : MonoBehaviour
 {
     [SerializeField] private int level;
     
@@ -114,11 +114,11 @@ public class BlockGenerate1 : MonoBehaviour
 
     void SetBlock(GameObject NewBlock)
     {
-        NewBlock.GetComponent<BlockGenerate1>().stopOn = stopOn;
-        NewBlock.GetComponent<BlockGenerate1>().block = block;
-        NewBlock.GetComponent<BlockGenerate1>().currentBlock = currentBlock + 1;
-        NewBlock.GetComponent<BlockGenerate1>().level = level;
-        NewBlock.GetComponent<BlockGenerate1>().isStartSlope = false;
+        NewBlock.GetComponent<BlockGenerate>().stopOn = stopOn;
+        NewBlock.GetComponent<BlockGenerate>().block = block;
+        NewBlock.GetComponent<BlockGenerate>().currentBlock = currentBlock + 1;
+        NewBlock.GetComponent<BlockGenerate>().level = level;
+        NewBlock.GetComponent<BlockGenerate>().isStartSlope = false;
 
     }
 
