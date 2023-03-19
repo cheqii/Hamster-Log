@@ -25,8 +25,11 @@ public class LevelUnlock : MonoBehaviour
     
     void LoadShopData()
     {
-        if(PlayerPrefs.GetInt(lv+10.ToString() , 0) == 1)
+
+        if(PlayerPrefs.GetInt((lv+10).ToString() , 0) == 1)
         {
+           
+
             lockPage.gameObject.SetActive(false); ;
         }
         else

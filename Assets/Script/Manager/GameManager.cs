@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     [Header("Shop Panel")]
     private ShopSystem shopSystem;
 
+    
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("11",1);
+    }
     private void Start()
     {
         SoundManager.Instance.StopSound();
