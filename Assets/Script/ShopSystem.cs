@@ -13,12 +13,6 @@ public class ShopSystem : MonoBehaviour
     private void Start()
     {
         coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
-        totalCoinText.text = coinSystem.TotalCoin.ToString();
-    }
-
-    private void Update()
-    {
-        totalCoinText.text = coinSystem.TotalCoin.ToString();
     }
 
     void AddItem(int id)
@@ -47,6 +41,11 @@ public class ShopSystem : MonoBehaviour
                 Debug.Log("Already purchased");
             }
         }
+    }
+
+    public void UpdateCoin()
+    {
+        totalCoinText.text = coinSystem.TotalCoin.ToString();
     }
 
     public void ResetShop(int id)
