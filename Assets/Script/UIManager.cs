@@ -24,6 +24,10 @@ public class UIManager : MonoBehaviour
     [Header("You Win Ui")] 
     [SerializeField] private GameObject[] Uw_Close;
     [SerializeField] private GameObject[] Uw_Open;
+    
+    [Header("Back Button")] 
+    [SerializeField] private GameObject[] Ba_Close;
+    [SerializeField] private GameObject[] Ba_Open;
 
     
     private void Start()
@@ -36,6 +40,11 @@ public class UIManager : MonoBehaviour
     public void StartButton()
     {
         OpenAndClose(St_Close, St_Open);
+    }
+    
+    public void BackButton()
+    {
+        OpenAndClose(Ba_Close, Ba_Open);
     }
     
     public void ShopButton()
