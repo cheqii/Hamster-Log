@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a1ef731dc29f4a4e8ffe49bedd117b5, type: 3}
-  m_Name: LV1
+  m_Name: LV4
   m_EditorClassIdentifier: 
-  LevelDistance: 55
+  LevelDistance: 100
   Objects:
   - {fileID: 7501164642879770473, guid: 0b635289e8cb9be45a97379a4b781497, type: 3}
   - {fileID: 8250673911315493516, guid: b7d30dc381e6294438884374f46bdc49, type: 3}
   - {fileID: 6495570680920953046, guid: 9f40382d8d37362428477575fd4dcb96, type: 3}
   - {fileID: 3129200342344496425, guid: ff4788b51f8527d459f766454dd4ba70, type: 3}
   - {fileID: 509738190878763238, guid: 6c95f21a3028430409322c1e278958a0, type: 3}
-  ObstacleChance: 0000000000000000000000003200000032000000
+  ObstacleChance: 00000000140000000a0000003c0000000a000000
   SpawnChance: 100
-  MaxSpawn: 3
-  laneSwitchPercent: 5
+  MaxSpawn: 8
+  laneSwitchPercent: 45
   invisibleGround: {fileID: 2735708374385532397, guid: 913e86180fe891d479344eae2f9da673, type: 3}
   EndSlope: {fileID: 2735708374385532397, guid: afc731ab81de2ed4082703bdcb8db83c, type: 3}

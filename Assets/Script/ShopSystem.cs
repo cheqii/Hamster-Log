@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ShopSystem : MonoBehaviour
 {
@@ -35,10 +34,9 @@ public class ShopSystem : MonoBehaviour
             if(coinSystem.TotalCoin < price) Debug.Log("Not enough coins");
             if(PlayerPrefs.GetInt(id.ToString()) == 1)
             {
-                //items.PriceText.text = "Used";
                 FindObjectOfType<Hamster>().ChangeHamsterSkin(items.HamsterSkins.hamssterImage,id);
                 PlayerPrefs.SetInt("currentSkin",id);
-                Debug.Log("Already purchased");
+                Debug.Log("Change Skin");
             }
         }
     }
