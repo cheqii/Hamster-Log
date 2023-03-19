@@ -29,6 +29,11 @@ public class Hamster : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    private void Awake()
+    {
+        PlayerPrefs.SetInt("0", 1);
+    }
+
     private void Start()
     {
         HamsterSkin = GetComponent<SpriteRenderer>();

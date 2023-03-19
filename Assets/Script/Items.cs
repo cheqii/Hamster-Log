@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,17 +24,19 @@ public class Items : MonoBehaviour
     [SerializeField] private Button button;
 
     private CoinSystem coinSystem;
+
     private void Start()
     {
         coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
+        button.GetComponent<Image>().color = Color.green;
         LoadShopData();
     }
 
     private void Update()
     {
         if(coinSystem.TotalCoin >= hamsterSkins.price) button.GetComponent<Image>().color = Color.green;
-        if(coinSystem.TotalCoin < hamsterSkins.price) button.GetComponent<Image>().color = Color.red;
-
+        if(coinSystem.TotalCoin < hamsterSkins.price && PlayerPrefs.GetInt(hamsterSkins.ID.ToString(), 0) == 0) button.GetComponent<Image>().color = Color.red;
+        
     }
 
     void LoadShopData()
