@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
@@ -5,10 +6,11 @@ public class GroundCheck : MonoBehaviour
     private bool isGround = false;
     private Hamster hamster;
 
+
+ 
+
     private void Start()
     {
-
-        //hamster = this.transform.Find("Hamster").GetComponent<Hamster>();
         hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
     }
 
