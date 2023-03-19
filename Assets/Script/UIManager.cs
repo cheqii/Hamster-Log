@@ -7,7 +7,6 @@ public class UIManager : MonoBehaviour
 {
     private LogControl _logControl;
     private LevelSelect _levelSelect;
-    private CoinSystem coinSystem;
     private GameManager _gameManager;
     
     [Header("Start Button")] 
@@ -31,7 +30,6 @@ public class UIManager : MonoBehaviour
     {
         _logControl = FindObjectOfType<LogControl>().GetComponent<LogControl>();
         _levelSelect= FindObjectOfType<LevelSelect>().GetComponent<LevelSelect>();
-        coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
         _gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
     }
 
