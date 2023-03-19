@@ -21,6 +21,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private TextMeshProUGUI totalCoinText;
     
+    [Header("Win UI")]
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private TextMeshProUGUI winScoreText;
+    [SerializeField] private TextMeshProUGUI winHighScoreText;
+    [SerializeField] private TextMeshProUGUI winCoinText;
+    [SerializeField] private TextMeshProUGUI winTotalCoinText;
+
     private DistanceCount distanceCount;
     private CoinSystem coinSystem;
     
@@ -54,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         GameOver();
         PausePanel();
+        WinPanel();
         shopSystem.UpdateCoin();
     }
 
@@ -84,6 +92,20 @@ public class GameManager : MonoBehaviour
             }
             if (isPaused) Time.timeScale = 0;
         }
+    }
+
+    public void WinPanel()
+    {
+        if (winPanel.activeSelf)
+        {
+            winScoreText.text = "Score : " + distanceCount.MaxDistance.ToString("F0") + " M";
+            winHighScoreText.text = "High Score : " + distanceCount.HighScore.ToString("F0") + " M";
+                    
+            winCoinText.text = coinSystem.AmountCoin.ToString();
+            winTotalCoinText.text = "Total Coins : " + coinSystem.TotalCoin.ToString();
+            Pause();
+        }
+        
     }
 
     public void PausePanel()
