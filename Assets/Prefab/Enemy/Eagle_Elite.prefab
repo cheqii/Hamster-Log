@@ -563,8 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothSpeed: 0.08
-  locationOffset: {x: 2, y: -3.35, z: 0}
+  smoothSpeed: 0.09
+  locationOffset: {x: 2.3, y: -3.35, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &23888551809277082
 GameObject:

@@ -29,6 +29,10 @@ public class UIManager : MonoBehaviour
     [Header("Credit Button")] 
     [SerializeField] private GameObject[] Cr_Close;
     [SerializeField] private GameObject[] Cr_Open;
+    
+    [Header("HowToPlay Button")] 
+    [SerializeField] private GameObject[] Ht_Close;
+    [SerializeField] private GameObject[] Ht_Open;
 
     
     private void Start()
@@ -79,6 +83,13 @@ public class UIManager : MonoBehaviour
         OpenAndClose(Uw_Close, Uw_Open);
         SoundManager.Instance.StopSound();
         SoundManager.Instance.PlayWin();
+
+    }
+    
+    public void HowToPlay()
+    {
+        OpenAndClose(Ht_Close, Ht_Open);
+        SoundManager.Instance.PlayOpenUi();
 
     }
     
