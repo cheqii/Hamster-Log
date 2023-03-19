@@ -93,6 +93,12 @@ public class UIManager : MonoBehaviour
 
     }
     
+    public void QuitGame()
+    {
+        Application.Quit();
+
+    }
+    
     
 
     private void OpenAndClose(GameObject[] close, GameObject[] open)
