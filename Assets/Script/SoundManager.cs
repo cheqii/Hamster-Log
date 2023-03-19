@@ -46,6 +46,8 @@ public class SoundManager : MonoBehaviour
     {
         PlaySound(_music[1]);
     }
+    
+    //sfx
 
     public void PlayJump()
     {
@@ -55,6 +57,11 @@ public class SoundManager : MonoBehaviour
     public void PlayBrake()
     {
         PlaySFX(1,0.35f);
+    }
+    
+    public void PlayTakeCoin()
+    {
+        PlaySFX(2,0.35f);
     }
     
     public void PlayHamsterDie()
@@ -78,9 +85,9 @@ public class SoundManager : MonoBehaviour
         PlaySFX(7,0.35f);
     }
     
-    public void PlayTakeCoin()
+    public void PlayOKHEREWEGO()
     {
-        PlaySFX(2,0.35f);
+        PlaySFX(9,0.35f);
     }
     
     public void PlayWin()
@@ -95,10 +102,18 @@ public class SoundManager : MonoBehaviour
         PlaySFX(11,0.3f);
     }
     
-    public void PlayOKHEREWEGO()
+    public void PlayUnlock()
     {
-        PlaySFX(9,0.35f);
+        PlaySFX(12,0.3f);
     }
+    
+    public void PlayBuy()
+    {
+        PlaySFX(13,0.3f);
+    }
+
+    
+
     
     public void PlaySFX(int clip,float vol)
     {
