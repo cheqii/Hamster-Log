@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,18 +8,28 @@ public class Items : MonoBehaviour
 {
     [Header("HamsterSkin Data")]
     [SerializeField] private HamsterSkins hamsterSkins;
-    
     [SerializeField] private Image hamsterSprites;
     [SerializeField] private TextMeshProUGUI priceText;
-
     public TextMeshProUGUI PriceText
-    {
-        get => priceText;
-        set => priceText = value;
-    }
+        {
+            get => priceText;
+            set => priceText = value;
+        }
+    
+    [SerializeField] private Button button;
+
+    private CoinSystem coinSystem;
     private void Start()
     {
+        coinSystem = FindObjectOfType<CoinSystem>().GetComponent<CoinSystem>();
         LoadShopData();
+    }
+
+    private void Update()
+    {
+        if(coinSystem.TotalCoin >= hamsterSkins.price) button.GetComponent<Image>().color = Color.green;
+        if(coinSystem.TotalCoin < hamsterSkins.price) button.GetComponent<Image>().color = Color.red;
+
     }
 
     void LoadShopData()
