@@ -14,6 +14,12 @@ public class Items : MonoBehaviour
             set => priceText = value;
         }
     
+    public HamsterSkins HamsterSkins
+    {
+        get => hamsterSkins;
+        set => hamsterSkins = value;
+    }
+    
     [SerializeField] private Button button;
 
     private CoinSystem coinSystem;

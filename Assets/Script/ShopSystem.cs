@@ -18,6 +18,7 @@ public class ShopSystem : MonoBehaviour
     void AddItem(int id)
     {
         PlayerPrefs.SetInt(id.ToString(), 1);
+        PlayerPrefs.SetInt("currentSkin",id);
     }
 
     public void Purchase(int id, int price, Items items)
@@ -32,7 +33,13 @@ public class ShopSystem : MonoBehaviour
         else
         {
             if(coinSystem.TotalCoin < price) Debug.Log("Not enough coins");
-            if(PlayerPrefs.GetInt(id.ToString()) == 1) Debug.Log("Already purchased");
+            if(PlayerPrefs.GetInt(id.ToString()) == 1)
+            {
+                FindObjectOfType<Hamster>().ChangeHamsterSkin(items.HamsterSkins.hamssterImage,id);
+                PlayerPrefs.SetInt("currentSkin",id);
+
+                Debug.Log("Already purchased");
+            }
         }
     }
 

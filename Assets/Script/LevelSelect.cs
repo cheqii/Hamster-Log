@@ -10,7 +10,7 @@ public class LevelSelect : MonoBehaviour
 
     public void ChangeLevel(int _level)
     {
-        startBlock.SetLevel(_level-1,GameData.Instance.GetLaneSwitch(_level-1));
+        startBlock.SetLevel(_level-1,GameData.Instance.GetLaneSwitch(_level-1),GameData.Instance.GetLevelDistance(_level-1));
         startBlock.GenerateLevel();
     }
 
