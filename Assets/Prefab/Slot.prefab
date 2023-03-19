@@ -363,6 +363,7 @@ MonoBehaviour:
   hamsterSkins: {fileID: 0}
   hamsterSprites: {fileID: 9085445685114295169}
   priceText: {fileID: 9085445684171545249}
+  button: {fileID: 9085445684716066416}
 --- !u!1 &9085445685114295171
 GameObject:
   m_ObjectHideFlags: 0
