@@ -53,27 +53,46 @@ public class LogControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A))
             {
                 rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
-                ChangeRotate(-30);
+                HamsterStable(100);
+
+                
             }
             else if(Input.GetKeyUp(KeyCode.A)) ChangeRotate(0);
             
             if (Input.GetKeyDown(KeyCode.D))
             {
+                HamsterStable(100);
                 rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
-                ChangeRotate(30);
+                
             }
             else if(Input.GetKeyUp(KeyCode.D)) ChangeRotate(0);
             
             // hamster jump
             if (Input.GetKeyDown(KeyCode.Space) && _groundCheck.GetIsGround() == true) Jump(jumpPower);
-            
-            
-            if (Input.GetKey(KeyCode.A)) rb.AddForce(Vector3.right * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
-            
-            if (Input.GetKey(KeyCode.D)) rb.AddForce(Vector3.left * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
+
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                ChangeRotate(-30);
+                rb.AddForce(Vector3.right * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                ChangeRotate(30);
+                rb.AddForce(Vector3.left * Time.deltaTime * (turnSpeed + (rb.velocity.magnitude / 4)), ForceMode.VelocityChange);
+            }
             
             //hamster log brake
-            if (Input.GetKeyDown(KeyCode.LeftShift)) Brake();
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                Brake();
+            }
+            
+            if (Input.GetKey(KeyCode.E))
+            {
+                HamsterStable(20);
+            }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
@@ -106,6 +125,21 @@ public class LogControl : MonoBehaviour
     
     private void ChangeRotate(int r)
     {
-        transform.eulerAngles  = new Vector3(transform.eulerAngles.x, r, transform.eulerAngles.z);
+        var currentAngle = new Vector3(transform.eulerAngles.x,  Mathf.LerpAngle(transform.eulerAngles.y, r, Time.deltaTime*20), transform.eulerAngles.z);
+
+
+        transform.eulerAngles = currentAngle;
+    }
+
+    private void HamsterStable(int speed)
+    {
+        rb.angularVelocity = Vector3.zero;
+
+        var currentAngle = new Vector3(
+            Mathf.LerpAngle(transform.eulerAngles.x, 0, Time.deltaTime*speed),
+            Mathf.LerpAngle(transform.eulerAngles.y, 0, Time.deltaTime*speed),
+            Mathf.LerpAngle(transform.eulerAngles.z,0,Time.deltaTime*speed));
+        
+        transform.eulerAngles = currentAngle;
     }
 }
