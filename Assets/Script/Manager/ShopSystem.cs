@@ -28,6 +28,8 @@ public class ShopSystem : MonoBehaviour
             coinSystem.DecreaseCoin(price);
             AddItem(id);
             items.PriceText.text = "Use";
+            SoundManager.Instance.PlayBuy();
+
         }
         else
         {
@@ -50,6 +52,7 @@ public class ShopSystem : MonoBehaviour
             coinSystem.DecreaseCoin(price);
             PlayerPrefs.SetInt(id.ToString()+10, 1);
             lockPage.SetActive(false);
+            SoundManager.Instance.PlayUnlock();
         }
         else
         {
@@ -58,6 +61,7 @@ public class ShopSystem : MonoBehaviour
             if(PlayerPrefs.GetInt(id.ToString()+10) == 1)
             {
                 FindObjectOfType<LevelSelect>().GetComponent<LevelSelect>().ChangeLevel(lv);
+                FindObjectOfType<UIManager>().GetComponent<UIManager>().StartGame();
             }
         }
     }
