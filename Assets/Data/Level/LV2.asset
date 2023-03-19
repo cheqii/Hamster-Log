@@ -20,9 +20,9 @@ MonoBehaviour:
   - {fileID: 3129200342344496425, guid: ff4788b51f8527d459f766454dd4ba70, type: 3}
   - {fileID: 509738190878763238, guid: 6c95f21a3028430409322c1e278958a0, type: 3}
   - {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
-  ObstacleChance: 0a0000000a0000000a000000320000001400000000000000
+  ObstacleChance: 050000000a00000005000000320000000a00000014000000
   SpawnChance: 100
-  MaxSpawn: 3
+  MaxSpawn: 4
   laneSwitchPercent: 5
   invisibleGround: {fileID: 2735708374385532397, guid: 913e86180fe891d479344eae2f9da673, type: 3}
   EndSlope: {fileID: 2735708374385532397, guid: afc731ab81de2ed4082703bdcb8db83c, type: 3}
