@@ -23,8 +23,7 @@ public class LogControl : MonoBehaviour
         _groundCheck = GetComponent<GroundCheck>();
         LogSpin();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         LogMovement();
@@ -91,7 +90,7 @@ public class LogControl : MonoBehaviour
             
             if (Input.GetKey(KeyCode.E))
             {
-                HamsterStable(20);
+                HamsterStable(2);
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))

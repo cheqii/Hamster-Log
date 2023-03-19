@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LevelSelect : MonoBehaviour
 {
-    [SerializeField] private BlockGenerate1 startBlock;
+    [SerializeField] private BlockGenerate startBlock;
 
     public void ChangeLevel(int _level)
     {
