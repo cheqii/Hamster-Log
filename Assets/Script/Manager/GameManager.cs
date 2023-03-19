@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.StopSound();
+        SoundManager.Instance.PlayMainMusic();
+        
         hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         distanceCount = GetComponent<DistanceCount>();
         coinSystem = GetComponent<CoinSystem>();

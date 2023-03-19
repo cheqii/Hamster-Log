@@ -37,16 +37,20 @@ public class UIManager : MonoBehaviour
     public void StartButton()
     {
         OpenAndClose(St_Close, St_Open);
+        SoundManager.Instance.PlayOpenUi();
     }
     
     public void BackButton()
     {
         OpenAndClose(Ba_Close, Ba_Open);
+        SoundManager.Instance.PlayBackUi();
     }
     
     public void ShopButton()
     {
         OpenAndClose(Sh_Close, Sh_Open);
+        SoundManager.Instance.PlayOpenUi();
+
         
     }
 
@@ -55,11 +59,16 @@ public class UIManager : MonoBehaviour
     {
         OpenAndClose(Sg_Close, Sg_Open);
         _logControl.HamsterStart();
+        SoundManager.Instance.PlayOpenUi();
+        SoundManager.Instance.PlayOKHEREWEGO();
+
     }
 
     public void YouWin()
     {
         OpenAndClose(Uw_Close, Uw_Open);
+        SoundManager.Instance.StopSound();
+        SoundManager.Instance.PlayWin();
 
     }
     

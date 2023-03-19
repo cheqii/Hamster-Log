@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LogControl : MonoBehaviour
@@ -88,6 +89,12 @@ public class LogControl : MonoBehaviour
                 Brake();
             }
             
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                SoundManager.Instance.PlayBrake();
+            }
+
+            
             if (Input.GetKey(KeyCode.E))
             {
                 HamsterStable(2);
@@ -104,10 +111,12 @@ public class LogControl : MonoBehaviour
             if (Input.GetKey(KeyCode.R)) LogSpin();
         }
     }
+    
 
     public void Jump(int power)
     {
         rb.AddForce(Vector3.up * power, ForceMode.Impulse);
+        SoundManager.Instance.PlayJump();
     }
     
     void Brake()

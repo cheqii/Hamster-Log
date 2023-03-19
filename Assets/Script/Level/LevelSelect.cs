@@ -10,6 +10,9 @@ public class LevelSelect : MonoBehaviour
         startBlock.GenerateLevel();
         FindObjectOfType<DistanceCount>().GetComponent<DistanceCount>().SetLevel("HSLV" + _level.ToString());
         RenderSettings.skybox = GameData.Instance.GetSkybox(_level-1);
+        
+        SoundManager.Instance.StopSound();
+        SoundManager.Instance.PlayGameMusic();
     }
 
 }
