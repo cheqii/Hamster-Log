@@ -8,7 +8,6 @@ public class Items : MonoBehaviour
     [SerializeField] private HamsterSkins hamsterSkins;
     
     [SerializeField] private Image hamsterSprites;
-    [SerializeField] private int hamsterPrices;
     [SerializeField] private TextMeshProUGUI priceText;
 
     public TextMeshProUGUI PriceText
@@ -17,6 +16,11 @@ public class Items : MonoBehaviour
         set => priceText = value;
     }
     private void Start()
+    {
+        LoadShopData();
+    }
+
+    void LoadShopData()
     {
         if(PlayerPrefs.GetInt(hamsterSkins.ID.ToString() , 0) == 1)
         {
@@ -33,6 +37,6 @@ public class Items : MonoBehaviour
     
     public void UnlockHamster()
     {
-        FindObjectOfType<ShopSystem>().Purchase(hamsterSkins.ID, hamsterPrices, this);
+        FindObjectOfType<ShopSystem>().Purchase(hamsterSkins.ID, hamsterSkins.price, this);
     }
 }
