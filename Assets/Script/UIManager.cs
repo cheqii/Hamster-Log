@@ -45,33 +45,15 @@ public class UIManager : MonoBehaviour
     }
 
 
-    private void StartGame()
+    public void StartGame()
     {
         OpenAndClose(Sg_Close, Sg_Open);
         _logControl.HamsterStart();
     }
-    public void StartLevel1()
-    {
-        _levelSelect.ChangeLevel(1);
-        StartGame();
-    }
-    
-    public void StartLevel2()
-    {
-        _levelSelect.ChangeLevel(2);
-        StartGame();
-    }
-    
-    public void StartLevel3()
-    {
-        _levelSelect.ChangeLevel(3);
-        StartGame();
-    }
-    
+
     public void YouWin()
     {
         OpenAndClose(Uw_Close, Uw_Open);
-        _gameManager.Pause();
 
     }
     

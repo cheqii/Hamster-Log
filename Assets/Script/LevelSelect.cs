@@ -8,7 +8,7 @@ public class LevelSelect : MonoBehaviour
     {
         startBlock.SetLevel(_level-1,GameData.Instance.GetLaneSwitch(_level-1),GameData.Instance.GetLevelDistance(_level-1));
         startBlock.GenerateLevel();
-        FindObjectOfType<DistanceCount>().GetComponent<DistanceCount>().SetLevel("LV" + _level.ToString());
+        FindObjectOfType<DistanceCount>().GetComponent<DistanceCount>().SetLevel("HSLV" + _level.ToString());
     }
 
 }
