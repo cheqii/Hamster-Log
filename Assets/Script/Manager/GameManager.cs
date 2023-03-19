@@ -143,6 +143,12 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+
+    public void FreeMoney()
+    {
+        coinSystem.IncreaseCoin(200);
+    }
+    
     #endregion
 
 }
