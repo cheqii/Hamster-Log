@@ -44,7 +44,7 @@ public class ShopSystem : MonoBehaviour
         }
     }
     
-    public void Purchase(int id, int price, int lv,GameObject lockPage)
+    public void Purchase(int id, int price, int lv,GameObject lockPage,TextMeshProUGUI priceText)
     {
         if (coinSystem.TotalCoin >= price && PlayerPrefs.GetInt((id+10).ToString()) == 0)
         {
@@ -53,6 +53,7 @@ public class ShopSystem : MonoBehaviour
             PlayerPrefs.SetInt((id+10).ToString(), 1);
             lockPage.SetActive(false);
             SoundManager.Instance.PlayUnlock();
+            priceText.text = "Play!";
         }
         else
         {
