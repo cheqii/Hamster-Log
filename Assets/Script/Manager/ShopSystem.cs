@@ -37,6 +37,7 @@ public class ShopSystem : MonoBehaviour
                 FindObjectOfType<Hamster>().ChangeHamsterSkin(items.HamsterSkins.hamssterImage,id);
                 PlayerPrefs.SetInt("currentSkin",id);
                 Debug.Log("Change Skin");
+                SoundManager.Instance.PlayChangeCharactor();
             }
         }
     }

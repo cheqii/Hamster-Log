@@ -48,7 +48,6 @@ public class DistanceCount : MonoBehaviour
         }
         else if (!hamster)
         {
-            Debug.Log("Hamster null");
             HamsterDistance();
         }
     }

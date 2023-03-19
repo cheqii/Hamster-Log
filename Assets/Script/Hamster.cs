@@ -25,6 +25,8 @@ public class Hamster : MonoBehaviour
         Destroy(_logControl.GetComponent<GroundCheck>());
         Destroy(magnet);
         Destroy(this.gameObject);
+        SoundManager.Instance.StopSound();
+        SoundManager.Instance.PlayHamsterDie();
     }
 
     private void Awake()
@@ -53,7 +55,10 @@ public class Hamster : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("ground")) HamsterDie();
+        if (other.transform.CompareTag("ground"))
+        {
+            HamsterDie();
+        }
         
         if(other.gameObject.CompareTag("Obstacle")) HamsterDie();
         
@@ -64,6 +69,7 @@ public class Hamster : MonoBehaviour
             Destroy(other.gameObject);// destroy the magnet
             magnet.Ismagnetic = true;
             StartCoroutine(magnet.MagnetActivate());
+            SoundManager.Instance.PlayTakeMagmnet();
         }
 
         if (other.CompareTag("Coin"))
@@ -71,6 +77,7 @@ public class Hamster : MonoBehaviour
             Debug.Log("Get Coin");
             Destroy(other.gameObject);
             coinSystem.CoinCollect();
+            SoundManager.Instance.PlayTakeCoin();
         }
     }
 }
