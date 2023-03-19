@@ -42,6 +42,27 @@ public class ShopSystem : MonoBehaviour
             }
         }
     }
+    
+    public void Purchase(int id, int price, int lv,GameObject lockPage)
+    {
+        if (coinSystem.TotalCoin >= price && PlayerPrefs.GetInt(id+10.ToString()) == 0)
+        {
+            Debug.Log("Purchased");
+            coinSystem.DecreaseCoin(price);
+            PlayerPrefs.SetInt(id.ToString()+10, 1);
+            lockPage.SetActive(false);
+        }
+        else
+        {
+            if(coinSystem.TotalCoin < price) Debug.Log("Not enough coins");
+            
+            if(PlayerPrefs.GetInt(id.ToString()+10) == 1)
+            {
+                FindObjectOfType<LevelSelect>().GetComponent<LevelSelect>().ChangeLevel(lv);
+            }
+        }
+    }
+    
 
     public void UpdateCoin()
     {

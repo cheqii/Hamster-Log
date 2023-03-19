@@ -24,6 +24,10 @@ public class UIManager : MonoBehaviour
     [Header("You Win Ui")] 
     [SerializeField] private GameObject[] Uw_Close;
     [SerializeField] private GameObject[] Uw_Open;
+    
+    [Header("Back Button")] 
+    [SerializeField] private GameObject[] Ba_Close;
+    [SerializeField] private GameObject[] Ba_Open;
 
     
     private void Start()
@@ -38,6 +42,11 @@ public class UIManager : MonoBehaviour
         OpenAndClose(St_Close, St_Open);
     }
     
+    public void BackButton()
+    {
+        OpenAndClose(Ba_Close, Ba_Open);
+    }
+    
     public void ShopButton()
     {
         OpenAndClose(Sh_Close, Sh_Open);
@@ -45,33 +54,15 @@ public class UIManager : MonoBehaviour
     }
 
 
-    private void StartGame()
+    public void StartGame()
     {
         OpenAndClose(Sg_Close, Sg_Open);
         _logControl.HamsterStart();
     }
-    public void StartLevel1()
-    {
-        _levelSelect.ChangeLevel(1);
-        StartGame();
-    }
-    
-    public void StartLevel2()
-    {
-        _levelSelect.ChangeLevel(2);
-        StartGame();
-    }
-    
-    public void StartLevel3()
-    {
-        _levelSelect.ChangeLevel(3);
-        StartGame();
-    }
-    
+
     public void YouWin()
     {
         OpenAndClose(Uw_Close, Uw_Open);
-        _gameManager.Pause();
 
     }
     
