@@ -64,6 +64,9 @@ public class Hamster : MonoBehaviour
         
         if(other.gameObject.CompareTag("InvisibleGround")) HamsterDie();
         
+        if(other.gameObject.CompareTag("Enemy")) HamsterDie();
+
+        
         if(other.CompareTag("Magnet"))
         {
             Destroy(other.gameObject);// destroy the magnet

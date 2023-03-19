@@ -14,6 +14,10 @@ public class LogControl : MonoBehaviour
     [SerializeField] private float normalFriction = 0.12f;
     [SerializeField] private float brakeFriction;
 
+    [Header("air drag")] [SerializeField] private float[] Drag = {0.001f, 0.05f};
+    [Header("air drag")] [SerializeField] private float[] angularDrag = {0.001f, 0.05f};
+
+
     private Rigidbody rb;
     private GroundCheck _groundCheck;
 
@@ -44,18 +48,20 @@ public class LogControl : MonoBehaviour
         }
         
         rb.AddForce(Vector3.back / 10,ForceMode.VelocityChange);
+
+       
+
     }
 
     public void LogMovement()
     {
         if (Time.timeScale == 1)
         {
+
             if (Input.GetKeyDown(KeyCode.A))
             {
                 rb.velocity = new Vector3(rb.velocity.x / 1.5f, rb.velocity.y, rb.velocity.z);
                 HamsterStable(100);
-
-                
             }
             else if(Input.GetKeyUp(KeyCode.A)) ChangeRotate(0);
             
@@ -87,6 +93,13 @@ public class LogControl : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 Brake();
+                rb.drag = rb.velocity.magnitude * Drag[1];
+                rb.angularDrag = rb.velocity.magnitude * angularDrag[1];
+            }
+            else
+            {
+                rb.drag = rb.velocity.magnitude * Drag[0];
+                rb.angularDrag = rb.velocity.magnitude * angularDrag[0];
             }
             
             if (Input.GetKeyDown(KeyCode.LeftShift))

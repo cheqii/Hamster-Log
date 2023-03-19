@@ -29,5 +29,8 @@ public class LevelData : ScriptableObject
     
     [Header("Skybox")]
     public Material _Skybox;
+    
+    [Header("Enemy")]
+    public GameObject _enemy;
 
 }
