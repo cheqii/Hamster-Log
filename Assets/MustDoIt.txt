@@ -1,5 +1,6 @@
-- coin (qiqi)
-    - shop system
+- coin system (qiqi) finished
+    
+- shop system
 
 - magnet (qiqi) Finished
 
@@ -7,7 +8,7 @@
     - level data
     - level select UI
 
-- hamster shop  
+- hamster shop  UI (qiqi) Complete
     - hamster sprites
     - hamster select
     - hamster unlock
@@ -16,4 +17,4 @@
 
 - credit
 
-- distance meter (gus)
+- distance meter (gus) finished

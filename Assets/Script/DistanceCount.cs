@@ -6,7 +6,7 @@ public class DistanceCount : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI highScoreText;
-    [SerializeField] private Hamster hamster;
+    private Hamster hamster;
 
     [Header("Distance Score")]
     private Vector2 startPoint;
@@ -25,24 +25,19 @@ public class DistanceCount : MonoBehaviour
         get => highScore;
         set => highScore = value;
     }
-    
+
+    private string currentLevel;
+
     private void Awake()
     {
+        hamster = FindObjectOfType<Hamster>().GetComponent<Hamster>();
         if (hamster)
         {
             Debug.Log("Start Point Assign");
             startPoint = hamster.GetComponent<Hamster>().transform.localPosition;
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        highScore = PlayerPrefs.GetFloat("highscore", 0);
-        highScoreText.text = "HighScore : " + highScore.ToString("F0") + " M";
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (hamster)
@@ -53,7 +48,6 @@ public class DistanceCount : MonoBehaviour
         }
         else if (!hamster)
         {
-            Debug.Log("Hamster null");
             HamsterDistance();
         }
     }
@@ -73,12 +67,19 @@ public class DistanceCount : MonoBehaviour
         if (highScore < maxDistance)
         {
             highScore = maxDistance;
-            PlayerPrefs.SetFloat("highscore", highScore);
+            PlayerPrefs.SetFloat(currentLevel, highScore);
         }
     }
 
     public int GetDistance()
     {
         return distance.ConvertTo<int>();
+    }
+
+    public void SetLevel(string level)
+    {
+        currentLevel = level;
+        highScore = PlayerPrefs.GetFloat(currentLevel, 0);
+        highScoreText.text = "HighScore : " + highScore.ToString("F0") + " M";
     }
 }
