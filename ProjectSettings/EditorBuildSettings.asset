@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Hamster Lab.unity
     guid: 7288baa41fd73db4aa3585e302ddb9e2
   - enabled: 1
-    path: Assets/Scenes/Level Select.unity
-    guid: 70d47b100338a2442a9197550e11d1ef
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 9aa038d5997363e40b30074458c4b368
   m_configObjects: {}
