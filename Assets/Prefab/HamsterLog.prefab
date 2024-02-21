@@ -116,6 +116,8 @@ MonoBehaviour:
   blood: {fileID: 2486864602928570452, guid: bf594371b39ee394e93b937aca9d3cfc, type: 3}
   _logControl: {fileID: 7164468430481260332}
   magnet: {fileID: 0}
+  coinSystem: {fileID: 0}
+  skins: []
 --- !u!1 &7164468430481260310
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,6 +256,12 @@ MonoBehaviour:
   logMaterial: {fileID: 13400000, guid: a46423997b1e6394e948350ef108e393, type: 2}
   normalFriction: 0.12
   brakeFriction: 0.4
+  Drag:
+  - 0.001
+  - 0.05
+  angularDrag:
+  - 0.001
+  - 0.05
 --- !u!114 &7164468430481260335
 MonoBehaviour:
   m_ObjectHideFlags: 0
